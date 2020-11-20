@@ -40,7 +40,7 @@ module.exports =
 /******/ 	// the startup function
 /******/ 	function startup() {
 /******/ 		// Load entry module and return exports
-/******/ 		return __webpack_require__(661);
+/******/ 		return __webpack_require__(131);
 /******/ 	};
 /******/
 /******/ 	// run startup
@@ -1136,6 +1136,21 @@ exports.issueCommand = issueCommand;
 /***/ (function(module) {
 
 module.exports = require("child_process");
+
+/***/ }),
+
+/***/ 131:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const setup_haskell_1 = __importDefault(__webpack_require__(661));
+setup_haskell_1.default();
+
 
 /***/ }),
 
@@ -8690,7 +8705,7 @@ async function cabalConfig() {
     });
     return out.toString().trim().split('\n').slice(-1)[0].trim();
 }
-(async () => {
+async function run() {
     try {
         core.info('Preparing to setup a Haskell environment');
         const opts = opts_1.getOpts(opts_1.getDefaults());
@@ -8717,7 +8732,9 @@ async function cabalConfig() {
     catch (error) {
         core.setFailed(error.message);
     }
-})();
+}
+exports.default = run;
+run();
 
 
 /***/ }),

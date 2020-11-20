@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "description": "setup haskell action",
-  "main": "src/setup-haskell.ts",
+  "main": "src/main.ts",
+  "types": "out/main.d.ts",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/setup-haskell.git"
+    "url": "git+https://github.com/omelkonian/setup-haskell.git"
   },
   "keywords": [
     "actions",
