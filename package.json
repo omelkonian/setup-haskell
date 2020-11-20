@@ -9,7 +9,7 @@
     "build": "tsc && ncc build",
     "watch": "tsc -w -p .",
     "tsc": "tsc",
-    "test": "tsc --noEmit && jest --coverage",
+    "test": "jest --coverage",
     "lint": "eslint **/*.ts --cache",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts"
