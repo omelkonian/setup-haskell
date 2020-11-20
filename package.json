@@ -1,16 +1,25 @@
 {
   "name": "setup-haskell",
   "version": "1.0.0",
-  "private": true,
   "description": "setup haskell action",
-  "main": "src/main.ts",
-  "types": "out/main.d.ts",
+  "main": ".out/main",
+  "types": ".out/main",
   "scripts": {
-    "test": "jest"
+    "prepublishOnly": "npm run build",
+    "build": "tsc && ncc build",
+    "watch": "tsc -w -p .",
+    "tsc": "tsc",
+    "test": "tsc --noEmit && jest --coverage",
+    "lint": "eslint **/*.ts --cache",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/omelkonian/setup-haskell.git"
+  },
+  "bugs": {
+    "url": "http://github.com/omelkonian/setup-haskell/issues"
   },
   "keywords": [
     "actions",
@@ -19,7 +28,7 @@
     "cabal",
     "setup"
   ],
-  "author": "GitHub",
+  "author": "Orestis Melkonian <melkon.or@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.4",

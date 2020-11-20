@@ -1,3 +1,4 @@
-import run from './setup-haskell';
+// Main entry point
+import run from './lib';
 
 run();
