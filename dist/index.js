@@ -40,7 +40,7 @@ module.exports =
 /******/ 	// the startup function
 /******/ 	function startup() {
 /******/ 		// Load entry module and return exports
-/******/ 		return __webpack_require__(290);
+/******/ 		return __webpack_require__(656);
 /******/ 	};
 /******/
 /******/ 	// run startup
@@ -839,214 +839,6 @@ module.exports = new Type('tag:yaml.org,2002:int', {
     hexadecimal: [ 16, 'hex' ]
   }
 });
-
-
-/***/ }),
-
-/***/ 81:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.installTool = void 0;
-const core = __importStar(__webpack_require__(470));
-const exec_1 = __webpack_require__(986);
-const io_1 = __webpack_require__(1);
-const glob_1 = __webpack_require__(281);
-const tc = __importStar(__webpack_require__(533));
-const fs_1 = __webpack_require__(747);
-const path_1 = __webpack_require__(622);
-function failed(tool, version) {
-    throw new Error(`All install methods for ${tool} ${version} failed`);
-}
-async function success(tool, version, path) {
-    core.addPath(path);
-    core.setOutput(`${tool}-path`, path);
-    core.setOutput(`${tool}-exe`, await io_1.which(tool));
-    core.info(`Found ${tool} ${version} in cache at path ${path}. Setup successful.`);
-    return true;
-}
-function warn(tool, version) {
-    const policy = {
-        cabal: `the two latest major releases of ${tool} are commonly supported.`,
-        ghc: `the three latest major releases of ${tool} are commonly supported.`,
-        stack: `the latest release of ${tool} is commonly supported.`
-    }[tool];
-    core.warning(`${tool} ${version} was not found in the cache. It will be downloaded.\n` +
-        `If this is unexpected, please check if version ${version} is pre-installed.\n` +
-        `The list of pre-installed versions is available here: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners\n` +
-        `The above list follows a common haskell convention that ${policy}\n` +
-        'If the list is outdated, please file an issue here: https://github.com/actions/virtual-environments\n' +
-        'by using the appropriate tool request template: https://github.com/actions/virtual-environments/issues/new/choose');
-}
-async function isInstalled(tool, version, os) {
-    const toolPath = tc.find(tool, version);
-    if (toolPath)
-        return success(tool, version, toolPath);
-    const ghcupPath = `${process.env.HOME}/.ghcup${tool === 'ghc' ? `/ghc/${version}` : ''}/bin`;
-    const v = tool === 'cabal' ? version.slice(0, 3) : version;
-    const aptPath = `/opt/${tool}/${v}/bin`;
-    const chocoPath = getChocoPath(tool, version);
-    const locations = {
-        stack: [],
-        cabal: {
-            win32: [chocoPath],
-            linux: [aptPath],
-            darwin: []
-        }[os],
-        ghc: {
-            win32: [chocoPath],
-            linux: [aptPath, ghcupPath],
-            darwin: [ghcupPath]
-        }[os]
-    };
-    for (const p of locations[tool]) {
-        const installedPath = await fs_1.promises
-            .access(p)
-            .then(() => p)
-            .catch(() => undefined);
-        if (installedPath) {
-            // Make sure that the correct ghc is used, even if ghcup has set a
-            // default prior to this action being ran.
-            if (tool === 'ghc' && installedPath === ghcupPath)
-                await exec_1.exec(await ghcupBin(os), ['set', version]);
-            return success(tool, version, installedPath);
-        }
-    }
-    if (tool === 'cabal' && os !== 'win32') {
-        const installedPath = await fs_1.promises
-            .access(`${ghcupPath}/cabal`)
-            .then(() => ghcupPath)
-            .catch(() => undefined);
-        if (installedPath)
-            return success(tool, version, installedPath);
-    }
-    return false;
-}
-async function installTool(tool, version, os) {
-    if (await isInstalled(tool, version, os))
-        return;
-    warn(tool, version);
-    if (tool === 'stack') {
-        await stack(version, os);
-        if (await isInstalled(tool, version, os))
-            return;
-        return failed(tool, version);
-    }
-    switch (os) {
-        case 'linux':
-            await apt(tool, version);
-            if (await isInstalled(tool, version, os))
-                return;
-            await ghcup(tool, version, os);
-            break;
-        case 'win32':
-            await choco(tool, version);
-            break;
-        case 'darwin':
-            await ghcup(tool, version, os);
-            break;
-    }
-    if (await isInstalled(tool, version, os))
-        return;
-    return failed(tool, version);
-}
-exports.installTool = installTool;
-async function stack(version, os) {
-    core.info(`Attempting to install stack ${version}`);
-    const build = {
-        linux: `linux-x86_64${version >= '2.3.1' ? '' : '-static'}`,
-        darwin: 'osx-x86_64',
-        win32: 'windows-x86_64'
-    }[os];
-    const url = `https://github.com/commercialhaskell/stack/releases/download/v${version}/stack-${version}-${build}.tar.gz`;
-    const p = await tc.downloadTool(`${url}`).then(tc.extractTar);
-    const [stackPath] = await glob_1.create(`${p}/stack*`, {
-        implicitDescendants: false
-    }).then(async (g) => g.glob());
-    await tc.cacheDir(stackPath, 'stack', version);
-    if (os === 'win32')
-        core.exportVariable('STACK_ROOT', 'C:\\sr');
-}
-async function apt(tool, version) {
-    const toolName = tool === 'ghc' ? 'ghc' : 'cabal-install';
-    const v = tool === 'cabal' ? version.slice(0, 3) : version;
-    core.info(`Attempting to install ${toolName} ${v} using apt-get`);
-    // Ignore the return code so we can fall back to ghcup
-    await exec_1.exec(`sudo -- sh -c "apt-get -y install ${toolName}-${v}"`, undefined, {
-        ignoreReturnCode: true
-    });
-}
-async function choco(tool, version) {
-    core.info(`Attempting to install ${tool} ${version} using chocolatey`);
-    // Choco tries to invoke `add-path` command on earlier versions of ghc, which has been deprecated and fails the step, so disable command execution during this.
-    console.log('::stop-commands::SetupHaskellStopCommands');
-    await exec_1.exec('powershell', [
-        'choco',
-        'install',
-        tool,
-        '--version',
-        version,
-        '-m',
-        '--no-progress',
-        '-r'
-    ], {
-        ignoreReturnCode: true
-    });
-    console.log('::SetupHaskellStopCommands::'); // Re-enable command execution
-    // Add GHC to path automatically because it does not add until the end of the step and we check the path.
-    if (tool == 'ghc') {
-        core.addPath(getChocoPath(tool, version));
-    }
-}
-async function ghcupBin(os) {
-    const v = '0.1.8';
-    const cachedBin = tc.find('ghcup', v);
-    if (cachedBin)
-        return path_1.join(cachedBin, 'ghcup');
-    const bin = await tc.downloadTool(`https://downloads.haskell.org/ghcup/${v}/x86_64-${os === 'darwin' ? 'apple-darwin' : 'linux'}-ghcup-${v}`);
-    await fs_1.promises.chmod(bin, 0o755);
-    return path_1.join(await tc.cacheFile(bin, 'ghcup', 'ghcup', v), 'ghcup');
-}
-async function ghcup(tool, version, os) {
-    core.info(`Attempting to install ${tool} ${version} using ghcup`);
-    const bin = await ghcupBin(os);
-    const returnCode = await exec_1.exec(bin, [tool === 'ghc' ? 'install' : 'install-cabal', version], {
-        ignoreReturnCode: true
-    });
-    if (returnCode === 0 && tool === 'ghc')
-        await exec_1.exec(bin, ['set', version]);
-}
-function getChocoPath(tool, version) {
-    // Manually add the path because it won't happen until the end of the step normally
-    const pathArray = version.split('.');
-    const pathVersion = pathArray.length > 3
-        ? pathArray.slice(0, pathArray.length - 1).join('.')
-        : pathArray.join('.');
-    const chocoPath = path_1.join(`${process.env.ChocolateyInstall}`, 'lib', `${tool}.${version}`, 'tools', tool === 'ghc' ? `${tool}-${pathVersion}` : `${tool}-${version}`, // choco trims the ghc version here
-    tool === 'ghc' ? 'bin' : '');
-    return chocoPath;
-}
 
 
 /***/ }),
@@ -3220,22 +3012,6 @@ exports.create = create;
 
 /***/ }),
 
-/***/ 290:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-// Main entry point
-const lib_1 = __importDefault(__webpack_require__(436));
-lib_1.default();
-
-
-/***/ }),
-
 /***/ 297:
 /***/ (function(__unusedmodule, exports, __webpack_require__) {
 
@@ -3690,6 +3466,13 @@ var MatchKind;
 
 /***/ }),
 
+/***/ 329:
+/***/ (function(module) {
+
+module.exports = {"ghc":["8.10.2","8.10.1","8.8.4","8.8.3","8.8.2","8.8.1","8.6.5","8.6.4","8.6.3","8.6.2","8.6.1","8.4.4","8.4.3","8.4.2","8.4.1","8.2.2","8.0.2","7.10.3"],"cabal":["3.2.0.0","3.0.0.0","2.4.1.0","2.4.0.0","2.2.0.0"],"stack":["2.3.1","2.1.3","2.1.1","1.9.3","1.9.1","1.7.1","1.6.5","1.6.3","1.6.1","1.5.1","1.5.0","1.4.0","1.3.2","1.3.0","1.2.0"]};
+
+/***/ }),
+
 /***/ 352:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -3938,6 +3721,79 @@ module.exports = new Type('tag:yaml.org,2002:js/undefined', {
 
 /***/ }),
 
+/***/ 387:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core = __importStar(__webpack_require__(470));
+const fs = __importStar(__webpack_require__(747));
+const opts_1 = __webpack_require__(635);
+const installer_1 = __webpack_require__(734);
+const exec_1 = __webpack_require__(986);
+async function cabalConfig() {
+    let out = Buffer.from('');
+    const append = (b) => (out = Buffer.concat([out, b]));
+    await exec_1.exec('cabal', ['--help'], {
+        silent: true,
+        listeners: { stdout: append, stderr: append }
+    });
+    return out.toString().trim().split('\n').slice(-1)[0].trim();
+}
+async function run() {
+    try {
+        core.info('Preparing to setup a Haskell environment');
+        const opts = opts_1.getOpts(opts_1.getDefaults());
+        for (const [t, { resolved }] of Object.entries(opts).filter(o => o[1].enable))
+            await core.group(`Installing ${t} version ${resolved}`, async () => installer_1.installTool(t, resolved, process.platform));
+        if (opts.stack.setup)
+            await core.group('Pre-installing GHC with stack', async () => exec_1.exec('stack', ['setup', opts.ghc.resolved]));
+        if (opts.cabal.enable)
+            await core.group('Setting up cabal', async () => {
+                await exec_1.exec('cabal', ['user-config', 'update'], { silent: true });
+                const configFile = await cabalConfig();
+                if (process.platform === 'win32') {
+                    fs.appendFileSync(configFile, 'store-dir: C:\\sr\n');
+                    core.setOutput('cabal-store', 'C:\\sr');
+                }
+                else {
+                    core.setOutput('cabal-store', `${process.env.HOME}/.cabal/store`);
+                }
+                await exec_1.exec('cabal user-config update');
+                if (!opts.stack.enable)
+                    await exec_1.exec('cabal update');
+            });
+    }
+    catch (error) {
+        core.setFailed(error.message);
+    }
+}
+exports.default = run;
+run();
+
+
+/***/ }),
+
 /***/ 413:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -4168,79 +4024,6 @@ function escapeProperty(s) {
         .replace(/,/g, '%2C');
 }
 //# sourceMappingURL=command.js.map
-
-/***/ }),
-
-/***/ 436:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const core = __importStar(__webpack_require__(470));
-const fs = __importStar(__webpack_require__(747));
-const opts_1 = __webpack_require__(926);
-const installer_1 = __webpack_require__(81);
-const exec_1 = __webpack_require__(986);
-async function cabalConfig() {
-    let out = Buffer.from('');
-    const append = (b) => (out = Buffer.concat([out, b]));
-    await exec_1.exec('cabal', ['--help'], {
-        silent: true,
-        listeners: { stdout: append, stderr: append }
-    });
-    return out.toString().trim().split('\n').slice(-1)[0].trim();
-}
-async function run() {
-    try {
-        core.info('Preparing to setup a Haskell environment');
-        const opts = opts_1.getOpts(opts_1.getDefaults());
-        for (const [t, { resolved }] of Object.entries(opts).filter(o => o[1].enable))
-            await core.group(`Installing ${t} version ${resolved}`, async () => installer_1.installTool(t, resolved, process.platform));
-        if (opts.stack.setup)
-            await core.group('Pre-installing GHC with stack', async () => exec_1.exec('stack', ['setup', opts.ghc.resolved]));
-        if (opts.cabal.enable)
-            await core.group('Setting up cabal', async () => {
-                await exec_1.exec('cabal', ['user-config', 'update'], { silent: true });
-                const configFile = await cabalConfig();
-                if (process.platform === 'win32') {
-                    fs.appendFileSync(configFile, 'store-dir: C:\\sr\n');
-                    core.setOutput('cabal-store', 'C:\\sr');
-                }
-                else {
-                    core.setOutput('cabal-store', `${process.env.HOME}/.cabal/store`);
-                }
-                await exec_1.exec('cabal user-config update');
-                if (!opts.stack.enable)
-                    await exec_1.exec('cabal update');
-            });
-    }
-    catch (error) {
-        core.setFailed(error.message);
-    }
-}
-exports.default = run;
-run();
-
 
 /***/ }),
 
@@ -8604,6 +8387,121 @@ module.exports = new Type('tag:yaml.org,2002:merge', {
 
 /***/ }),
 
+/***/ 635:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getOpts = exports.getDefaults = void 0;
+const core = __importStar(__webpack_require__(470));
+const fs_1 = __webpack_require__(747);
+const js_yaml_1 = __webpack_require__(414);
+const path_1 = __webpack_require__(622);
+const supported_versions = __importStar(__webpack_require__(329));
+function getDefaults() {
+    const inpts = js_yaml_1.safeLoad(fs_1.readFileSync(__webpack_require__.ab + "action.yml", 'utf8')).inputs;
+    const mkVersion = (v, vs) => ({
+        version: resolve(inpts[v].default, vs),
+        supported: vs
+    });
+    return {
+        ghc: mkVersion('ghc-version', supported_versions.ghc),
+        cabal: mkVersion('cabal-version', supported_versions.cabal),
+        stack: mkVersion('stack-version', supported_versions.stack)
+    };
+}
+exports.getDefaults = getDefaults;
+function resolve(version, supported) {
+    var _a;
+    return version === 'latest'
+        ? supported[0]
+        : (_a = supported.find(v => v.startsWith(version))) !== null && _a !== void 0 ? _a : version;
+}
+function getOpts({ ghc, cabal, stack }) {
+    const stackNoGlobal = core.getInput('stack-no-global') !== '';
+    const stackSetupGhc = core.getInput('stack-setup-ghc') !== '';
+    const stackEnable = core.getInput('enable-stack') !== '';
+    const verInpt = {
+        ghc: core.getInput('ghc-version') || ghc.version,
+        cabal: core.getInput('cabal-version') || cabal.version,
+        stack: core.getInput('stack-version') || stack.version
+    };
+    const errors = [];
+    if (stackNoGlobal && !stackEnable) {
+        errors.push('enable-stack is required if stack-no-global is set');
+    }
+    if (stackSetupGhc && !stackEnable) {
+        errors.push('enable-stack is required if stack-setup-ghc is set');
+    }
+    if (errors.length > 0) {
+        throw new Error(errors.join('\n'));
+    }
+    const opts = {
+        ghc: {
+            raw: verInpt.ghc,
+            resolved: resolve(verInpt.ghc, ghc.supported),
+            enable: !stackNoGlobal
+        },
+        cabal: {
+            raw: verInpt.cabal,
+            resolved: resolve(verInpt.cabal, cabal.supported),
+            enable: !stackNoGlobal
+        },
+        stack: {
+            raw: verInpt.stack,
+            resolved: resolve(verInpt.stack, stack.supported),
+            enable: stackEnable,
+            setup: core.getInput('stack-setup-ghc') !== ''
+        }
+    };
+    // eslint-disable-next-line github/array-foreach
+    Object.values(opts)
+        .filter(t => t.enable && t.raw !== t.resolved)
+        .forEach(t => core.info(`Resolved ${t.raw} to ${t.resolved}`));
+    core.debug(`Options are: ${JSON.stringify(opts)}`);
+    return opts;
+}
+exports.getOpts = getOpts;
+
+
+/***/ }),
+
+/***/ 656:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// Main entry point
+const lib_1 = __importDefault(__webpack_require__(387));
+lib_1.default();
+
+
+/***/ }),
+
 /***/ 669:
 /***/ (function(module) {
 
@@ -10364,10 +10262,211 @@ exports.SearchState = SearchState;
 
 /***/ }),
 
-/***/ 733:
-/***/ (function(module) {
+/***/ 734:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
 
-module.exports = {"ghc":["8.10.2","8.10.1","8.8.4","8.8.3","8.8.2","8.8.1","8.6.5","8.6.4","8.6.3","8.6.2","8.6.1","8.4.4","8.4.3","8.4.2","8.4.1","8.2.2","8.0.2","7.10.3"],"cabal":["3.2.0.0","3.0.0.0","2.4.1.0","2.4.0.0","2.2.0.0"],"stack":["2.3.1","2.1.3","2.1.1","1.9.3","1.9.1","1.7.1","1.6.5","1.6.3","1.6.1","1.5.1","1.5.0","1.4.0","1.3.2","1.3.0","1.2.0"]};
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.installTool = void 0;
+const core = __importStar(__webpack_require__(470));
+const exec_1 = __webpack_require__(986);
+const io_1 = __webpack_require__(1);
+const glob_1 = __webpack_require__(281);
+const tc = __importStar(__webpack_require__(533));
+const fs_1 = __webpack_require__(747);
+const path_1 = __webpack_require__(622);
+function failed(tool, version) {
+    throw new Error(`All install methods for ${tool} ${version} failed`);
+}
+async function success(tool, version, path) {
+    core.addPath(path);
+    core.setOutput(`${tool}-path`, path);
+    core.setOutput(`${tool}-exe`, await io_1.which(tool));
+    core.info(`Found ${tool} ${version} in cache at path ${path}. Setup successful.`);
+    return true;
+}
+function warn(tool, version) {
+    const policy = {
+        cabal: `the two latest major releases of ${tool} are commonly supported.`,
+        ghc: `the three latest major releases of ${tool} are commonly supported.`,
+        stack: `the latest release of ${tool} is commonly supported.`
+    }[tool];
+    core.warning(`${tool} ${version} was not found in the cache. It will be downloaded.\n` +
+        `If this is unexpected, please check if version ${version} is pre-installed.\n` +
+        `The list of pre-installed versions is available here: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners\n` +
+        `The above list follows a common haskell convention that ${policy}\n` +
+        'If the list is outdated, please file an issue here: https://github.com/actions/virtual-environments\n' +
+        'by using the appropriate tool request template: https://github.com/actions/virtual-environments/issues/new/choose');
+}
+async function isInstalled(tool, version, os) {
+    const toolPath = tc.find(tool, version);
+    if (toolPath)
+        return success(tool, version, toolPath);
+    const ghcupPath = `${process.env.HOME}/.ghcup${tool === 'ghc' ? `/ghc/${version}` : ''}/bin`;
+    const v = tool === 'cabal' ? version.slice(0, 3) : version;
+    const aptPath = `/opt/${tool}/${v}/bin`;
+    const chocoPath = getChocoPath(tool, version);
+    const locations = {
+        stack: [],
+        cabal: {
+            win32: [chocoPath],
+            linux: [aptPath],
+            darwin: []
+        }[os],
+        ghc: {
+            win32: [chocoPath],
+            linux: [aptPath, ghcupPath],
+            darwin: [ghcupPath]
+        }[os]
+    };
+    for (const p of locations[tool]) {
+        const installedPath = await fs_1.promises
+            .access(p)
+            .then(() => p)
+            .catch(() => undefined);
+        if (installedPath) {
+            // Make sure that the correct ghc is used, even if ghcup has set a
+            // default prior to this action being ran.
+            if (tool === 'ghc' && installedPath === ghcupPath)
+                await exec_1.exec(await ghcupBin(os), ['set', version]);
+            return success(tool, version, installedPath);
+        }
+    }
+    if (tool === 'cabal' && os !== 'win32') {
+        const installedPath = await fs_1.promises
+            .access(`${ghcupPath}/cabal`)
+            .then(() => ghcupPath)
+            .catch(() => undefined);
+        if (installedPath)
+            return success(tool, version, installedPath);
+    }
+    return false;
+}
+async function installTool(tool, version, os) {
+    if (await isInstalled(tool, version, os))
+        return;
+    warn(tool, version);
+    if (tool === 'stack') {
+        await stack(version, os);
+        if (await isInstalled(tool, version, os))
+            return;
+        return failed(tool, version);
+    }
+    switch (os) {
+        case 'linux':
+            await apt(tool, version);
+            if (await isInstalled(tool, version, os))
+                return;
+            await ghcup(tool, version, os);
+            break;
+        case 'win32':
+            await choco(tool, version);
+            break;
+        case 'darwin':
+            await ghcup(tool, version, os);
+            break;
+    }
+    if (await isInstalled(tool, version, os))
+        return;
+    return failed(tool, version);
+}
+exports.installTool = installTool;
+async function stack(version, os) {
+    core.info(`Attempting to install stack ${version}`);
+    const build = {
+        linux: `linux-x86_64${version >= '2.3.1' ? '' : '-static'}`,
+        darwin: 'osx-x86_64',
+        win32: 'windows-x86_64'
+    }[os];
+    const url = `https://github.com/commercialhaskell/stack/releases/download/v${version}/stack-${version}-${build}.tar.gz`;
+    const p = await tc.downloadTool(`${url}`).then(tc.extractTar);
+    const [stackPath] = await glob_1.create(`${p}/stack*`, {
+        implicitDescendants: false
+    }).then(async (g) => g.glob());
+    await tc.cacheDir(stackPath, 'stack', version);
+    if (os === 'win32')
+        core.exportVariable('STACK_ROOT', 'C:\\sr');
+}
+async function apt(tool, version) {
+    const toolName = tool === 'ghc' ? 'ghc' : 'cabal-install';
+    const v = tool === 'cabal' ? version.slice(0, 3) : version;
+    core.info(`Attempting to install ${toolName} ${v} using apt-get`);
+    // Ignore the return code so we can fall back to ghcup
+    await exec_1.exec(`sudo -- sh -c "apt-get -y install ${toolName}-${v}"`, undefined, {
+        ignoreReturnCode: true
+    });
+}
+async function choco(tool, version) {
+    core.info(`Attempting to install ${tool} ${version} using chocolatey`);
+    // Choco tries to invoke `add-path` command on earlier versions of ghc, which has been deprecated and fails the step, so disable command execution during this.
+    console.log('::stop-commands::SetupHaskellStopCommands');
+    await exec_1.exec('powershell', [
+        'choco',
+        'install',
+        tool,
+        '--version',
+        version,
+        '-m',
+        '--no-progress',
+        '-r'
+    ], {
+        ignoreReturnCode: true
+    });
+    console.log('::SetupHaskellStopCommands::'); // Re-enable command execution
+    // Add GHC to path automatically because it does not add until the end of the step and we check the path.
+    if (tool == 'ghc') {
+        core.addPath(getChocoPath(tool, version));
+    }
+}
+async function ghcupBin(os) {
+    const v = '0.1.8';
+    const cachedBin = tc.find('ghcup', v);
+    if (cachedBin)
+        return path_1.join(cachedBin, 'ghcup');
+    const bin = await tc.downloadTool(`https://downloads.haskell.org/ghcup/${v}/x86_64-${os === 'darwin' ? 'apple-darwin' : 'linux'}-ghcup-${v}`);
+    await fs_1.promises.chmod(bin, 0o755);
+    return path_1.join(await tc.cacheFile(bin, 'ghcup', 'ghcup', v), 'ghcup');
+}
+async function ghcup(tool, version, os) {
+    core.info(`Attempting to install ${tool} ${version} using ghcup`);
+    const bin = await ghcupBin(os);
+    const returnCode = await exec_1.exec(bin, [tool === 'ghc' ? 'install' : 'install-cabal', version], {
+        ignoreReturnCode: true
+    });
+    if (returnCode === 0 && tool === 'ghc')
+        await exec_1.exec(bin, ['set', version]);
+}
+function getChocoPath(tool, version) {
+    // Manually add the path because it won't happen until the end of the step normally
+    const pathArray = version.split('.');
+    const pathVersion = pathArray.length > 3
+        ? pathArray.slice(0, pathArray.length - 1).join('.')
+        : pathArray.join('.');
+    const chocoPath = path_1.join(`${process.env.ChocolateyInstall}`, 'lib', `${tool}.${version}`, 'tools', tool === 'ghc' ? `${tool}-${pathVersion}` : `${tool}-${version}`, // choco trims the ghc version here
+    tool === 'ghc' ? 'bin' : '');
+    return chocoPath;
+}
+
 
 /***/ }),
 
@@ -11135,105 +11234,6 @@ class Pattern {
 }
 exports.Pattern = Pattern;
 //# sourceMappingURL=internal-pattern.js.map
-
-/***/ }),
-
-/***/ 926:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getOpts = exports.getDefaults = void 0;
-const core = __importStar(__webpack_require__(470));
-const fs_1 = __webpack_require__(747);
-const js_yaml_1 = __webpack_require__(414);
-const path_1 = __webpack_require__(622);
-const supported_versions = __importStar(__webpack_require__(733));
-function getDefaults() {
-    const inpts = js_yaml_1.safeLoad(fs_1.readFileSync(__webpack_require__.ab + "action.yml", 'utf8')).inputs;
-    const mkVersion = (v, vs) => ({
-        version: resolve(inpts[v].default, vs),
-        supported: vs
-    });
-    return {
-        ghc: mkVersion('ghc-version', supported_versions.ghc),
-        cabal: mkVersion('cabal-version', supported_versions.cabal),
-        stack: mkVersion('stack-version', supported_versions.stack)
-    };
-}
-exports.getDefaults = getDefaults;
-function resolve(version, supported) {
-    var _a;
-    return version === 'latest'
-        ? supported[0]
-        : (_a = supported.find(v => v.startsWith(version))) !== null && _a !== void 0 ? _a : version;
-}
-function getOpts({ ghc, cabal, stack }) {
-    const stackNoGlobal = core.getInput('stack-no-global') !== '';
-    const stackSetupGhc = core.getInput('stack-setup-ghc') !== '';
-    const stackEnable = core.getInput('enable-stack') !== '';
-    const verInpt = {
-        ghc: core.getInput('ghc-version') || ghc.version,
-        cabal: core.getInput('cabal-version') || cabal.version,
-        stack: core.getInput('stack-version') || stack.version
-    };
-    const errors = [];
-    if (stackNoGlobal && !stackEnable) {
-        errors.push('enable-stack is required if stack-no-global is set');
-    }
-    if (stackSetupGhc && !stackEnable) {
-        errors.push('enable-stack is required if stack-setup-ghc is set');
-    }
-    if (errors.length > 0) {
-        throw new Error(errors.join('\n'));
-    }
-    const opts = {
-        ghc: {
-            raw: verInpt.ghc,
-            resolved: resolve(verInpt.ghc, ghc.supported),
-            enable: !stackNoGlobal
-        },
-        cabal: {
-            raw: verInpt.cabal,
-            resolved: resolve(verInpt.cabal, cabal.supported),
-            enable: !stackNoGlobal
-        },
-        stack: {
-            raw: verInpt.stack,
-            resolved: resolve(verInpt.stack, stack.supported),
-            enable: stackEnable,
-            setup: core.getInput('stack-setup-ghc') !== ''
-        }
-    };
-    // eslint-disable-next-line github/array-foreach
-    Object.values(opts)
-        .filter(t => t.enable && t.raw !== t.resolved)
-        .forEach(t => core.info(`Resolved ${t.raw} to ${t.resolved}`));
-    core.debug(`Options are: ${JSON.stringify(opts)}`);
-    return opts;
-}
-exports.getOpts = getOpts;
-
 
 /***/ }),
 

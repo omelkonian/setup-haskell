@@ -8,8 +8,8 @@
       "es2020.symbol.wellknown"
     ],
     "module": "commonjs",
-    "outDir": ".out",
-    "tsBuildInfoFile": ".out/tsbuildinfo",
+    "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsbuildinfo",
     "incremental": true,
     "rootDir": "./src",
     "strict": true,

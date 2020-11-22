@@ -2,14 +2,14 @@
   "name": "setup-haskell",
   "version": "1.0.0",
   "description": "setup haskell action",
-  "main": ".out/main",
-  "types": ".out/main",
+  "main": "dist/main",
+  "types": "dist/main",
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "tsc && ncc build",
     "watch": "tsc -w -p .",
     "tsc": "tsc",
-    "test": "jest --coverage",
+    "test": "jest",
     "lint": "eslint **/*.ts --cache",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts"
