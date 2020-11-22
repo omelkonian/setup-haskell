@@ -40,7 +40,419 @@ module.exports =
 /******/ 	// the startup function
 /******/ 	function startup() {
 /******/ 		// Load entry module and return exports
-/******/ 		return __webpack_require__(661);
+/******/ 		return __webpack_require__(429);
+/******/ 	};
+/******/
+/******/ 	// run startup
+/******/ 	return startup();
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 16:
+/***/ (function(module) {
+
+module.exports = require("tls");
+
+/***/ }),
+
+/***/ 87:
+/***/ (function(module) {
+
+module.exports = require("os");
+
+/***/ }),
+
+/***/ 129:
+/***/ (function(module) {
+
+module.exports = require("child_process");
+
+/***/ }),
+
+/***/ 211:
+/***/ (function(module) {
+
+module.exports = require("https");
+
+/***/ }),
+
+/***/ 357:
+/***/ (function(module) {
+
+module.exports = require("assert");
+
+/***/ }),
+
+/***/ 413:
+/***/ (function(module) {
+
+module.exports = require("stream");
+
+/***/ }),
+
+/***/ 417:
+/***/ (function(module) {
+
+module.exports = require("crypto");
+
+/***/ }),
+
+/***/ 429:
+/***/ (function(module, __unusedexports, __webpack_require__) {
+
+module.exports =
+/******/ (function(modules, runtime) { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete installedModules[moduleId];
+/******/ 		}
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	__webpack_require__.ab = __dirname + "/";
+/******/
+/******/ 	// the startup function
+/******/ 	function startup() {
+/******/ 		// Load entry module and return exports
+/******/ 		return __webpack_require__(429);
+/******/ 	};
+/******/
+/******/ 	// run startup
+/******/ 	return startup();
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 16:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(16);
+
+/***/ }),
+
+/***/ 87:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(87);
+
+/***/ }),
+
+/***/ 129:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(129);
+
+/***/ }),
+
+/***/ 211:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(211);
+
+/***/ }),
+
+/***/ 357:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(357);
+
+/***/ }),
+
+/***/ 413:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(413);
+
+/***/ }),
+
+/***/ 417:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(417);
+
+/***/ }),
+
+/***/ 429:
+/***/ (function(module, __unusedexports, __nested_webpack_require_2184__) {
+
+module.exports =
+/******/ (function(modules, runtime) { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete installedModules[moduleId];
+/******/ 		}
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	__webpack_require__.ab = __dirname + "/";
+/******/
+/******/ 	// the startup function
+/******/ 	function startup() {
+/******/ 		// Load entry module and return exports
+/******/ 		return __webpack_require__(429);
+/******/ 	};
+/******/
+/******/ 	// run startup
+/******/ 	return startup();
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 16:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(16);
+
+/***/ }),
+
+/***/ 87:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(87);
+
+/***/ }),
+
+/***/ 129:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(129);
+
+/***/ }),
+
+/***/ 211:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(211);
+
+/***/ }),
+
+/***/ 357:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(357);
+
+/***/ }),
+
+/***/ 413:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(413);
+
+/***/ }),
+
+/***/ 417:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(417);
+
+/***/ }),
+
+/***/ 429:
+/***/ (function(module, __unusedexports, __nested_webpack_require_2184__) {
+
+module.exports =
+/******/ (function(modules, runtime) { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete installedModules[moduleId];
+/******/ 		}
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	__webpack_require__.ab = __dirname + "/";
+/******/
+/******/ 	// the startup function
+/******/ 	function startup() {
+/******/ 		// Load entry module and return exports
+/******/ 		return __webpack_require__(429);
+/******/ 	};
+/******/
+/******/ 	// run startup
+/******/ 	return startup();
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 16:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(16);
+
+/***/ }),
+
+/***/ 87:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(87);
+
+/***/ }),
+
+/***/ 129:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(129);
+
+/***/ }),
+
+/***/ 211:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(211);
+
+/***/ }),
+
+/***/ 357:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(357);
+
+/***/ }),
+
+/***/ 413:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(413);
+
+/***/ }),
+
+/***/ 417:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(417);
+
+/***/ }),
+
+/***/ 429:
+/***/ (function(module, __unusedexports, __nested_webpack_require_2184__) {
+
+module.exports =
+/******/ (function(modules, runtime) { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete installedModules[moduleId];
+/******/ 		}
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	__webpack_require__.ab = __dirname + "/";
+/******/
+/******/ 	// the startup function
+/******/ 	function startup() {
+/******/ 		// Load entry module and return exports
+/******/ 		return __webpack_require__(656);
 /******/ 	};
 /******/
 /******/ 	// run startup
@@ -50,7 +462,7 @@ module.exports =
 /******/ ({
 
 /***/ 1:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_1583__) {
 
 "use strict";
 
@@ -64,10 +476,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const childProcess = __webpack_require__(129);
-const path = __webpack_require__(622);
-const util_1 = __webpack_require__(669);
-const ioUtil = __webpack_require__(672);
+const childProcess = __nested_webpack_require_1583__(129);
+const path = __nested_webpack_require_1583__(622);
+const util_1 = __nested_webpack_require_1583__(669);
+const ioUtil = __nested_webpack_require_1583__(672);
 const exec = util_1.promisify(childProcess.exec);
 /**
  * Copies a file or folder.
@@ -347,14 +759,14 @@ function copyFile(srcFile, destFile, force) {
 /***/ }),
 
 /***/ 9:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_13217__) {
 
 "use strict";
 
 
 
-var loader = __webpack_require__(457);
-var dumper = __webpack_require__(685);
+var loader = __nested_webpack_require_13217__(457);
+var dumper = __nested_webpack_require_13217__(685);
 
 
 function deprecated(name) {
@@ -364,25 +776,25 @@ function deprecated(name) {
 }
 
 
-module.exports.Type                = __webpack_require__(945);
-module.exports.Schema              = __webpack_require__(43);
-module.exports.FAILSAFE_SCHEMA     = __webpack_require__(581);
-module.exports.JSON_SCHEMA         = __webpack_require__(23);
-module.exports.CORE_SCHEMA         = __webpack_require__(611);
-module.exports.DEFAULT_SAFE_SCHEMA = __webpack_require__(723);
-module.exports.DEFAULT_FULL_SCHEMA = __webpack_require__(910);
+module.exports.Type                = __nested_webpack_require_13217__(945);
+module.exports.Schema              = __nested_webpack_require_13217__(43);
+module.exports.FAILSAFE_SCHEMA     = __nested_webpack_require_13217__(581);
+module.exports.JSON_SCHEMA         = __nested_webpack_require_13217__(23);
+module.exports.CORE_SCHEMA         = __nested_webpack_require_13217__(611);
+module.exports.DEFAULT_SAFE_SCHEMA = __nested_webpack_require_13217__(723);
+module.exports.DEFAULT_FULL_SCHEMA = __nested_webpack_require_13217__(910);
 module.exports.load                = loader.load;
 module.exports.loadAll             = loader.loadAll;
 module.exports.safeLoad            = loader.safeLoad;
 module.exports.safeLoadAll         = loader.safeLoadAll;
 module.exports.dump                = dumper.dump;
 module.exports.safeDump            = dumper.safeDump;
-module.exports.YAMLException       = __webpack_require__(556);
+module.exports.YAMLException       = __nested_webpack_require_13217__(556);
 
 // Deprecated schema names from JS-YAML 2.0.x
-module.exports.MINIMAL_SCHEMA = __webpack_require__(581);
-module.exports.SAFE_SCHEMA    = __webpack_require__(723);
-module.exports.DEFAULT_SCHEMA = __webpack_require__(910);
+module.exports.MINIMAL_SCHEMA = __nested_webpack_require_13217__(581);
+module.exports.SAFE_SCHEMA    = __nested_webpack_require_13217__(723);
+module.exports.DEFAULT_SCHEMA = __nested_webpack_require_13217__(910);
 
 // Deprecated functions from JS-YAML 1.x.x
 module.exports.scan           = deprecated('scan');
@@ -396,12 +808,12 @@ module.exports.addConstructor = deprecated('addConstructor');
 /***/ 16:
 /***/ (function(module) {
 
-module.exports = require("tls");
+module.exports = __nested_webpack_require_2184__(16);
 
 /***/ }),
 
 /***/ 23:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_14931__) {
 
 "use strict";
 // Standard YAML's JSON schema.
@@ -415,18 +827,18 @@ module.exports = require("tls");
 
 
 
-var Schema = __webpack_require__(43);
+var Schema = __nested_webpack_require_14931__(43);
 
 
 module.exports = new Schema({
   include: [
-    __webpack_require__(581)
+    __nested_webpack_require_14931__(581)
   ],
   implicit: [
-    __webpack_require__(809),
-    __webpack_require__(228),
-    __webpack_require__(44),
-    __webpack_require__(417)
+    __nested_webpack_require_14931__(809),
+    __nested_webpack_require_14931__(228),
+    __nested_webpack_require_14931__(44),
+    __nested_webpack_require_14931__(417)
   ]
 });
 
@@ -434,7 +846,7 @@ module.exports = new Schema({
 /***/ }),
 
 /***/ 31:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __nested_webpack_require_15607__) {
 
 "use strict";
 
@@ -455,13 +867,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const semver = __importStar(__webpack_require__(280));
-const core_1 = __webpack_require__(470);
+const semver = __importStar(__nested_webpack_require_15607__(280));
+const core_1 = __nested_webpack_require_15607__(470);
 // needs to be require for core node modules to be mocked
 /* eslint @typescript-eslint/no-require-imports: 0 */
-const os = __webpack_require__(87);
-const cp = __webpack_require__(129);
-const fs = __webpack_require__(747);
+const os = __nested_webpack_require_15607__(87);
+const cp = __nested_webpack_require_15607__(129);
+const fs = __nested_webpack_require_15607__(747);
 function _findMatch(versionSpec, stable, candidates, archFilter) {
     return __awaiter(this, void 0, void 0, function* () {
         const platFilter = os.platform();
@@ -547,16 +959,16 @@ exports._readLinuxVersionFile = _readLinuxVersionFile;
 /***/ }),
 
 /***/ 43:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_20205__) {
 
 "use strict";
 
 
 /*eslint-disable max-len*/
 
-var common        = __webpack_require__(740);
-var YAMLException = __webpack_require__(556);
-var Type          = __webpack_require__(945);
+var common        = __nested_webpack_require_20205__(740);
+var YAMLException = __nested_webpack_require_20205__(556);
+var Type          = __nested_webpack_require_20205__(945);
 
 
 function compileList(schema, name, result) {
@@ -663,13 +1075,13 @@ module.exports = Schema;
 /***/ }),
 
 /***/ 44:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_23061__) {
 
 "use strict";
 
 
-var common = __webpack_require__(740);
-var Type   = __webpack_require__(945);
+var common = __nested_webpack_require_23061__(740);
+var Type   = __nested_webpack_require_23061__(945);
 
 function isHexCode(c) {
   return ((0x30/* 0 */ <= c) && (c <= 0x39/* 9 */)) ||
@@ -843,105 +1255,6 @@ module.exports = new Type('tag:yaml.org,2002:int', {
 
 /***/ }),
 
-/***/ 54:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getOpts = exports.getDefaults = void 0;
-const core = __importStar(__webpack_require__(470));
-const fs_1 = __webpack_require__(747);
-const js_yaml_1 = __webpack_require__(414);
-const path_1 = __webpack_require__(622);
-const supported_versions = __importStar(__webpack_require__(447));
-function getDefaults() {
-    const inpts = js_yaml_1.safeLoad(fs_1.readFileSync(__webpack_require__.ab + "action.yml", 'utf8')).inputs;
-    const mkVersion = (v, vs) => ({
-        version: resolve(inpts[v].default, vs),
-        supported: vs
-    });
-    return {
-        ghc: mkVersion('ghc-version', supported_versions.ghc),
-        cabal: mkVersion('cabal-version', supported_versions.cabal),
-        stack: mkVersion('stack-version', supported_versions.stack)
-    };
-}
-exports.getDefaults = getDefaults;
-function resolve(version, supported) {
-    var _a;
-    return version === 'latest'
-        ? supported[0]
-        : (_a = supported.find(v => v.startsWith(version))) !== null && _a !== void 0 ? _a : version;
-}
-function getOpts({ ghc, cabal, stack }) {
-    const stackNoGlobal = core.getInput('stack-no-global') !== '';
-    const stackSetupGhc = core.getInput('stack-setup-ghc') !== '';
-    const stackEnable = core.getInput('enable-stack') !== '';
-    const verInpt = {
-        ghc: core.getInput('ghc-version') || ghc.version,
-        cabal: core.getInput('cabal-version') || cabal.version,
-        stack: core.getInput('stack-version') || stack.version
-    };
-    const errors = [];
-    if (stackNoGlobal && !stackEnable) {
-        errors.push('enable-stack is required if stack-no-global is set');
-    }
-    if (stackSetupGhc && !stackEnable) {
-        errors.push('enable-stack is required if stack-setup-ghc is set');
-    }
-    if (errors.length > 0) {
-        throw new Error(errors.join('\n'));
-    }
-    const opts = {
-        ghc: {
-            raw: verInpt.ghc,
-            resolved: resolve(verInpt.ghc, ghc.supported),
-            enable: !stackNoGlobal
-        },
-        cabal: {
-            raw: verInpt.cabal,
-            resolved: resolve(verInpt.cabal, cabal.supported),
-            enable: !stackNoGlobal
-        },
-        stack: {
-            raw: verInpt.stack,
-            resolved: resolve(verInpt.stack, stack.supported),
-            enable: stackEnable,
-            setup: core.getInput('stack-setup-ghc') !== ''
-        }
-    };
-    // eslint-disable-next-line github/array-foreach
-    Object.values(opts)
-        .filter(t => t.enable && t.raw !== t.resolved)
-        .forEach(t => core.info(`Resolved ${t.raw} to ${t.resolved}`));
-    core.debug(`Options are: ${JSON.stringify(opts)}`);
-    return opts;
-}
-exports.getOpts = getOpts;
-
-
-/***/ }),
-
 /***/ 82:
 /***/ (function(__unusedmodule, exports) {
 
@@ -971,18 +1284,18 @@ exports.toCommandValue = toCommandValue;
 /***/ 87:
 /***/ (function(module) {
 
-module.exports = require("os");
+module.exports = __nested_webpack_require_2184__(87);
 
 /***/ }),
 
 /***/ 93:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_27995__) {
 
 "use strict";
 
 
 
-var common = __webpack_require__(740);
+var common = __nested_webpack_require_27995__(740);
 
 
 function Mark(name, buffer, position, line, column) {
@@ -1060,12 +1373,12 @@ module.exports = Mark;
 /***/ }),
 
 /***/ 100:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_29652__) {
 
 "use strict";
 
 
-var Type = __webpack_require__(945);
+var Type = __nested_webpack_require_29652__(945);
 
 var _hasOwnProperty = Object.prototype.hasOwnProperty;
 
@@ -1097,7 +1410,7 @@ module.exports = new Type('tag:yaml.org,2002:set', {
 /***/ }),
 
 /***/ 102:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_30295__) {
 
 "use strict";
 
@@ -1112,9 +1425,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const fs = __importStar(__webpack_require__(747));
-const os = __importStar(__webpack_require__(87));
-const utils_1 = __webpack_require__(82);
+const fs = __importStar(__nested_webpack_require_30295__(747));
+const os = __importStar(__nested_webpack_require_30295__(87));
+const utils_1 = __nested_webpack_require_30295__(82);
 function issueCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -1135,17 +1448,17 @@ exports.issueCommand = issueCommand;
 /***/ 129:
 /***/ (function(module) {
 
-module.exports = require("child_process");
+module.exports = __nested_webpack_require_2184__(129);
 
 /***/ }),
 
 /***/ 139:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_31624__) {
 
 // Unique ID creation requires a high quality random # generator.  In node.js
 // this is pretty straight-forward - we use the crypto API.
 
-var crypto = __webpack_require__(373);
+var crypto = __nested_webpack_require_31624__(373);
 
 module.exports = function nodeRNG() {
   return crypto.randomBytes(16);
@@ -1155,18 +1468,18 @@ module.exports = function nodeRNG() {
 /***/ }),
 
 /***/ 141:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_31966__) {
 
 "use strict";
 
 
-var net = __webpack_require__(631);
-var tls = __webpack_require__(16);
-var http = __webpack_require__(605);
-var https = __webpack_require__(211);
-var events = __webpack_require__(614);
-var assert = __webpack_require__(357);
-var util = __webpack_require__(669);
+var net = __nested_webpack_require_31966__(631);
+var tls = __nested_webpack_require_31966__(16);
+var http = __nested_webpack_require_31966__(605);
+var https = __nested_webpack_require_31966__(211);
+var events = __nested_webpack_require_31966__(614);
+var assert = __nested_webpack_require_31966__(357);
+var util = __nested_webpack_require_31966__(669);
 
 
 exports.httpOverHttp = httpOverHttp;
@@ -1429,255 +1742,17 @@ exports.debug = debug; // for test
 /***/ 211:
 /***/ (function(module) {
 
-module.exports = require("https");
-
-/***/ }),
-
-/***/ 223:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const assert = __webpack_require__(357);
-const os = __webpack_require__(87);
-const path = __webpack_require__(622);
-const pathHelper = __webpack_require__(972);
-const minimatch_1 = __webpack_require__(595);
-const internal_match_kind_1 = __webpack_require__(327);
-const internal_path_1 = __webpack_require__(383);
-const IS_WINDOWS = process.platform === 'win32';
-class Pattern {
-    constructor(patternOrNegate, segments) {
-        /**
-         * Indicates whether matches should be excluded from the result set
-         */
-        this.negate = false;
-        // Pattern overload
-        let pattern;
-        if (typeof patternOrNegate === 'string') {
-            pattern = patternOrNegate.trim();
-        }
-        // Segments overload
-        else {
-            // Convert to pattern
-            segments = segments || [];
-            assert(segments.length, `Parameter 'segments' must not empty`);
-            const root = Pattern.getLiteral(segments[0]);
-            assert(root && pathHelper.hasAbsoluteRoot(root), `Parameter 'segments' first element must be a root path`);
-            pattern = new internal_path_1.Path(segments).toString().trim();
-            if (patternOrNegate) {
-                pattern = `!${pattern}`;
-            }
-        }
-        // Negate
-        while (pattern.startsWith('!')) {
-            this.negate = !this.negate;
-            pattern = pattern.substr(1).trim();
-        }
-        // Normalize slashes and ensures absolute root
-        pattern = Pattern.fixupPattern(pattern);
-        // Segments
-        this.segments = new internal_path_1.Path(pattern).segments;
-        // Trailing slash indicates the pattern should only match directories, not regular files
-        this.trailingSeparator = pathHelper
-            .normalizeSeparators(pattern)
-            .endsWith(path.sep);
-        pattern = pathHelper.safeTrimTrailingSeparator(pattern);
-        // Search path (literal path prior to the first glob segment)
-        let foundGlob = false;
-        const searchSegments = this.segments
-            .map(x => Pattern.getLiteral(x))
-            .filter(x => !foundGlob && !(foundGlob = x === ''));
-        this.searchPath = new internal_path_1.Path(searchSegments).toString();
-        // Root RegExp (required when determining partial match)
-        this.rootRegExp = new RegExp(Pattern.regExpEscape(searchSegments[0]), IS_WINDOWS ? 'i' : '');
-        // Create minimatch
-        const minimatchOptions = {
-            dot: true,
-            nobrace: true,
-            nocase: IS_WINDOWS,
-            nocomment: true,
-            noext: true,
-            nonegate: true
-        };
-        pattern = IS_WINDOWS ? pattern.replace(/\\/g, '/') : pattern;
-        this.minimatch = new minimatch_1.Minimatch(pattern, minimatchOptions);
-    }
-    /**
-     * Matches the pattern against the specified path
-     */
-    match(itemPath) {
-        // Last segment is globstar?
-        if (this.segments[this.segments.length - 1] === '**') {
-            // Normalize slashes
-            itemPath = pathHelper.normalizeSeparators(itemPath);
-            // Append a trailing slash. Otherwise Minimatch will not match the directory immediately
-            // preceeding the globstar. For example, given the pattern `/foo/**`, Minimatch returns
-            // false for `/foo` but returns true for `/foo/`. Append a trailing slash to handle that quirk.
-            if (!itemPath.endsWith(path.sep)) {
-                // Note, this is safe because the constructor ensures the pattern has an absolute root.
-                // For example, formats like C: and C:foo on Windows are resolved to an aboslute root.
-                itemPath = `${itemPath}${path.sep}`;
-            }
-        }
-        else {
-            // Normalize slashes and trim unnecessary trailing slash
-            itemPath = pathHelper.safeTrimTrailingSeparator(itemPath);
-        }
-        // Match
-        if (this.minimatch.match(itemPath)) {
-            return this.trailingSeparator ? internal_match_kind_1.MatchKind.Directory : internal_match_kind_1.MatchKind.All;
-        }
-        return internal_match_kind_1.MatchKind.None;
-    }
-    /**
-     * Indicates whether the pattern may match descendants of the specified path
-     */
-    partialMatch(itemPath) {
-        // Normalize slashes and trim unnecessary trailing slash
-        itemPath = pathHelper.safeTrimTrailingSeparator(itemPath);
-        // matchOne does not handle root path correctly
-        if (pathHelper.dirname(itemPath) === itemPath) {
-            return this.rootRegExp.test(itemPath);
-        }
-        return this.minimatch.matchOne(itemPath.split(IS_WINDOWS ? /\\+/ : /\/+/), this.minimatch.set[0], true);
-    }
-    /**
-     * Escapes glob patterns within a path
-     */
-    static globEscape(s) {
-        return (IS_WINDOWS ? s : s.replace(/\\/g, '\\\\')) // escape '\' on Linux/macOS
-            .replace(/(\[)(?=[^/]+\])/g, '[[]') // escape '[' when ']' follows within the path segment
-            .replace(/\?/g, '[?]') // escape '?'
-            .replace(/\*/g, '[*]'); // escape '*'
-    }
-    /**
-     * Normalizes slashes and ensures absolute root
-     */
-    static fixupPattern(pattern) {
-        // Empty
-        assert(pattern, 'pattern cannot be empty');
-        // Must not contain `.` segment, unless first segment
-        // Must not contain `..` segment
-        const literalSegments = new internal_path_1.Path(pattern).segments.map(x => Pattern.getLiteral(x));
-        assert(literalSegments.every((x, i) => (x !== '.' || i === 0) && x !== '..'), `Invalid pattern '${pattern}'. Relative pathing '.' and '..' is not allowed.`);
-        // Must not contain globs in root, e.g. Windows UNC path \\foo\b*r
-        assert(!pathHelper.hasRoot(pattern) || literalSegments[0], `Invalid pattern '${pattern}'. Root segment must not contain globs.`);
-        // Normalize slashes
-        pattern = pathHelper.normalizeSeparators(pattern);
-        // Replace leading `.` segment
-        if (pattern === '.' || pattern.startsWith(`.${path.sep}`)) {
-            pattern = Pattern.globEscape(process.cwd()) + pattern.substr(1);
-        }
-        // Replace leading `~` segment
-        else if (pattern === '~' || pattern.startsWith(`~${path.sep}`)) {
-            const homedir = os.homedir();
-            assert(homedir, 'Unable to determine HOME directory');
-            assert(pathHelper.hasAbsoluteRoot(homedir), `Expected HOME directory to be a rooted path. Actual '${homedir}'`);
-            pattern = Pattern.globEscape(homedir) + pattern.substr(1);
-        }
-        // Replace relative drive root, e.g. pattern is C: or C:foo
-        else if (IS_WINDOWS &&
-            (pattern.match(/^[A-Z]:$/i) || pattern.match(/^[A-Z]:[^\\]/i))) {
-            let root = pathHelper.ensureAbsoluteRoot('C:\\dummy-root', pattern.substr(0, 2));
-            if (pattern.length > 2 && !root.endsWith('\\')) {
-                root += '\\';
-            }
-            pattern = Pattern.globEscape(root) + pattern.substr(2);
-        }
-        // Replace relative root, e.g. pattern is \ or \foo
-        else if (IS_WINDOWS && (pattern === '\\' || pattern.match(/^\\[^\\]/))) {
-            let root = pathHelper.ensureAbsoluteRoot('C:\\dummy-root', '\\');
-            if (!root.endsWith('\\')) {
-                root += '\\';
-            }
-            pattern = Pattern.globEscape(root) + pattern.substr(1);
-        }
-        // Otherwise ensure absolute root
-        else {
-            pattern = pathHelper.ensureAbsoluteRoot(Pattern.globEscape(process.cwd()), pattern);
-        }
-        return pathHelper.normalizeSeparators(pattern);
-    }
-    /**
-     * Attempts to unescape a pattern segment to create a literal path segment.
-     * Otherwise returns empty string.
-     */
-    static getLiteral(segment) {
-        let literal = '';
-        for (let i = 0; i < segment.length; i++) {
-            const c = segment[i];
-            // Escape
-            if (c === '\\' && !IS_WINDOWS && i + 1 < segment.length) {
-                literal += segment[++i];
-                continue;
-            }
-            // Wildcard
-            else if (c === '*' || c === '?') {
-                return '';
-            }
-            // Character set
-            else if (c === '[' && i + 1 < segment.length) {
-                let set = '';
-                let closed = -1;
-                for (let i2 = i + 1; i2 < segment.length; i2++) {
-                    const c2 = segment[i2];
-                    // Escape
-                    if (c2 === '\\' && !IS_WINDOWS && i2 + 1 < segment.length) {
-                        set += segment[++i2];
-                        continue;
-                    }
-                    // Closed
-                    else if (c2 === ']') {
-                        closed = i2;
-                        break;
-                    }
-                    // Otherwise
-                    else {
-                        set += c2;
-                    }
-                }
-                // Closed?
-                if (closed >= 0) {
-                    // Cannot convert
-                    if (set.length > 1) {
-                        return '';
-                    }
-                    // Convert to literal
-                    if (set) {
-                        literal += set;
-                        i = closed;
-                        continue;
-                    }
-                }
-                // Otherwise fall thru
-            }
-            // Append
-            literal += c;
-        }
-        return literal;
-    }
-    /**
-     * Escapes regexp special characters
-     * https://javascript.info/regexp-escaping
-     */
-    static regExpEscape(s) {
-        return s.replace(/[[\\^$.|?*+()]/g, '\\$&');
-    }
-}
-exports.Pattern = Pattern;
-//# sourceMappingURL=internal-pattern.js.map
+module.exports = __nested_webpack_require_2184__(211);
 
 /***/ }),
 
 /***/ 228:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_39828__) {
 
 "use strict";
 
 
-var Type = __webpack_require__(945);
+var Type = __nested_webpack_require_39828__(945);
 
 function resolveYamlBoolean(data) {
   if (data === null) return false;
@@ -3318,7 +3393,7 @@ function coerce (version, options) {
 /***/ }),
 
 /***/ 281:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_83085__) {
 
 "use strict";
 
@@ -3332,7 +3407,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const internal_globber_1 = __webpack_require__(297);
+const internal_globber_1 = __nested_webpack_require_83085__(297);
 /**
  * Constructs a globber
  *
@@ -3350,7 +3425,7 @@ exports.create = create;
 /***/ }),
 
 /***/ 297:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_84349__) {
 
 "use strict";
 
@@ -3383,14 +3458,14 @@ var __asyncGenerator = (this && this.__asyncGenerator) || function (thisArg, _ar
     function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const core = __webpack_require__(470);
-const fs = __webpack_require__(747);
-const globOptionsHelper = __webpack_require__(601);
-const path = __webpack_require__(622);
-const patternHelper = __webpack_require__(597);
-const internal_match_kind_1 = __webpack_require__(327);
-const internal_pattern_1 = __webpack_require__(223);
-const internal_search_state_1 = __webpack_require__(728);
+const core = __nested_webpack_require_84349__(470);
+const fs = __nested_webpack_require_84349__(747);
+const globOptionsHelper = __nested_webpack_require_84349__(601);
+const path = __nested_webpack_require_84349__(622);
+const patternHelper = __nested_webpack_require_84349__(597);
+const internal_match_kind_1 = __nested_webpack_require_84349__(327);
+const internal_pattern_1 = __nested_webpack_require_84349__(923);
+const internal_search_state_1 = __nested_webpack_require_84349__(728);
 const IS_WINDOWS = process.platform === 'win32';
 class DefaultGlobber {
     constructor(options) {
@@ -3572,10 +3647,10 @@ exports.DefaultGlobber = DefaultGlobber;
 /***/ }),
 
 /***/ 306:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_94660__) {
 
-var concatMap = __webpack_require__(896);
-var balanced = __webpack_require__(621);
+var concatMap = __nested_webpack_require_94660__(896);
+var balanced = __nested_webpack_require_94660__(621);
 
 module.exports = expandTop;
 
@@ -3803,8 +3878,15 @@ var MatchKind;
 
 /***/ }),
 
+/***/ 329:
+/***/ (function(module) {
+
+module.exports = {"ghc":["8.10.2","8.10.1","8.8.4","8.8.3","8.8.2","8.8.1","8.6.5","8.6.4","8.6.3","8.6.2","8.6.1","8.4.4","8.4.3","8.4.2","8.4.1","8.2.2","8.0.2","7.10.3"],"cabal":["3.2.0.0","3.0.0.0","2.4.1.0","2.4.0.0","2.2.0.0"],"stack":["2.3.1","2.1.3","2.1.1","1.9.3","1.9.1","1.7.1","1.6.5","1.6.3","1.6.1","1.5.1","1.5.0","1.4.0","1.3.2","1.3.0","1.2.0"]};
+
+/***/ }),
+
 /***/ 352:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_100640__) {
 
 "use strict";
 
@@ -3828,7 +3910,7 @@ try {
   if (typeof window !== 'undefined') esprima = window.esprima;
 }
 
-var Type = __webpack_require__(945);
+var Type = __nested_webpack_require_100640__(945);
 
 function resolveJavascriptFunction(data) {
   if (data === null) return false;
@@ -3907,26 +3989,26 @@ module.exports = new Type('tag:yaml.org,2002:js/function', {
 /***/ 357:
 /***/ (function(module) {
 
-module.exports = require("assert");
+module.exports = __nested_webpack_require_2184__(357);
 
 /***/ }),
 
 /***/ 373:
 /***/ (function(module) {
 
-module.exports = require("crypto");
+module.exports = __nested_webpack_require_2184__(417);
 
 /***/ }),
 
 /***/ 383:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_103740__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const assert = __webpack_require__(357);
-const path = __webpack_require__(622);
-const pathHelper = __webpack_require__(972);
+const assert = __nested_webpack_require_103740__(357);
+const path = __nested_webpack_require_103740__(622);
+const pathHelper = __nested_webpack_require_103740__(972);
 const IS_WINDOWS = process.platform === 'win32';
 /**
  * Helper class for parsing paths into segments
@@ -4016,12 +4098,12 @@ exports.Path = Path;
 /***/ }),
 
 /***/ 386:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_107237__) {
 
 "use strict";
 
 
-var Type = __webpack_require__(945);
+var Type = __nested_webpack_require_107237__(945);
 
 function resolveJavascriptUndefined() {
   return true;
@@ -4051,22 +4133,95 @@ module.exports = new Type('tag:yaml.org,2002:js/undefined', {
 
 /***/ }),
 
-/***/ 413:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ 387:
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_107903__) {
 
-module.exports = __webpack_require__(141);
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core = __importStar(__nested_webpack_require_107903__(470));
+const fs = __importStar(__nested_webpack_require_107903__(747));
+const opts_1 = __nested_webpack_require_107903__(635);
+const installer_1 = __nested_webpack_require_107903__(734);
+const exec_1 = __nested_webpack_require_107903__(986);
+async function cabalConfig() {
+    let out = Buffer.from('');
+    const append = (b) => (out = Buffer.concat([out, b]));
+    await exec_1.exec('cabal', ['--help'], {
+        silent: true,
+        listeners: { stdout: append, stderr: append }
+    });
+    return out.toString().trim().split('\n').slice(-1)[0].trim();
+}
+async function run() {
+    try {
+        core.info('Preparing to setup a Haskell environment');
+        const opts = opts_1.getOpts(opts_1.getDefaults());
+        for (const [t, { resolved }] of Object.entries(opts).filter(o => o[1].enable))
+            await core.group(`Installing ${t} version ${resolved}`, async () => installer_1.installTool(t, resolved, process.platform));
+        if (opts.stack.setup)
+            await core.group('Pre-installing GHC with stack', async () => exec_1.exec('stack', ['setup', opts.ghc.resolved]));
+        if (opts.cabal.enable)
+            await core.group('Setting up cabal', async () => {
+                await exec_1.exec('cabal', ['user-config', 'update'], { silent: true });
+                const configFile = await cabalConfig();
+                if (process.platform === 'win32') {
+                    fs.appendFileSync(configFile, 'store-dir: C:\\sr\n');
+                    core.setOutput('cabal-store', 'C:\\sr');
+                }
+                else {
+                    core.setOutput('cabal-store', `${process.env.HOME}/.cabal/store`);
+                }
+                await exec_1.exec('cabal user-config update');
+                if (!opts.stack.enable)
+                    await exec_1.exec('cabal update');
+            });
+    }
+    catch (error) {
+        core.setFailed(error.message);
+    }
+}
+exports.default = run;
+run();
+
+
+/***/ }),
+
+/***/ 413:
+/***/ (function(module, __unusedexports, __nested_webpack_require_110854__) {
+
+module.exports = __nested_webpack_require_110854__(141);
 
 
 /***/ }),
 
 /***/ 414:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_110986__) {
 
 "use strict";
 
 
 
-var yaml = __webpack_require__(9);
+var yaml = __nested_webpack_require_110986__(9);
 
 
 module.exports = yaml;
@@ -4075,13 +4230,13 @@ module.exports = yaml;
 /***/ }),
 
 /***/ 417:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_111152__) {
 
 "use strict";
 
 
-var common = __webpack_require__(740);
-var Type   = __webpack_require__(945);
+var common = __nested_webpack_require_111152__(740);
+var Type   = __nested_webpack_require_111152__(945);
 
 var YAML_FLOAT_PATTERN = new RegExp(
   // 2.5e4, 2.5 and integers
@@ -4199,7 +4354,7 @@ module.exports = new Type('tag:yaml.org,2002:float', {
 /***/ }),
 
 /***/ 431:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_114092__) {
 
 "use strict";
 
@@ -4211,8 +4366,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const os = __importStar(__webpack_require__(87));
-const utils_1 = __webpack_require__(82);
+const os = __importStar(__nested_webpack_require_114092__(87));
+const utils_1 = __nested_webpack_require_114092__(82);
 /**
  * Commands
  *
@@ -4284,26 +4439,19 @@ function escapeProperty(s) {
 
 /***/ }),
 
-/***/ 447:
-/***/ (function(module) {
-
-module.exports = {"ghc":["8.10.2","8.10.1","8.8.4","8.8.3","8.8.2","8.8.1","8.6.5","8.6.4","8.6.3","8.6.2","8.6.1","8.4.4","8.4.3","8.4.2","8.4.1","8.2.2","8.0.2","7.10.3"],"cabal":["3.2.0.0","3.0.0.0","2.4.1.0","2.4.0.0","2.2.0.0"],"stack":["2.3.1","2.1.3","2.1.1","1.9.3","1.9.1","1.7.1","1.6.5","1.6.3","1.6.1","1.5.1","1.5.0","1.4.0","1.3.2","1.3.0","1.2.0"]};
-
-/***/ }),
-
 /***/ 457:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_116612__) {
 
 "use strict";
 
 
 /*eslint-disable max-len,no-use-before-define*/
 
-var common              = __webpack_require__(740);
-var YAMLException       = __webpack_require__(556);
-var Mark                = __webpack_require__(93);
-var DEFAULT_SAFE_SCHEMA = __webpack_require__(723);
-var DEFAULT_FULL_SCHEMA = __webpack_require__(910);
+var common              = __nested_webpack_require_116612__(740);
+var YAMLException       = __nested_webpack_require_116612__(556);
+var Mark                = __nested_webpack_require_116612__(93);
+var DEFAULT_SAFE_SCHEMA = __nested_webpack_require_116612__(723);
+var DEFAULT_FULL_SCHEMA = __nested_webpack_require_116612__(910);
 
 
 var _hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -5944,7 +6092,7 @@ module.exports.safeLoad    = safeLoad;
 /***/ }),
 
 /***/ 470:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_161055__) {
 
 "use strict";
 
@@ -5965,11 +6113,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const command_1 = __webpack_require__(431);
-const file_command_1 = __webpack_require__(102);
-const utils_1 = __webpack_require__(82);
-const os = __importStar(__webpack_require__(87));
-const path = __importStar(__webpack_require__(622));
+const command_1 = __nested_webpack_require_161055__(431);
+const file_command_1 = __nested_webpack_require_161055__(102);
+const utils_1 = __nested_webpack_require_161055__(82);
+const os = __importStar(__nested_webpack_require_161055__(87));
+const path = __importStar(__nested_webpack_require_161055__(622));
 /**
  * The code to exit an action
  */
@@ -6189,7 +6337,7 @@ exports.getState = getState;
 /***/ }),
 
 /***/ 533:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_169050__) {
 
 "use strict";
 
@@ -6213,20 +6361,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const core = __importStar(__webpack_require__(470));
-const io = __importStar(__webpack_require__(1));
-const fs = __importStar(__webpack_require__(747));
-const mm = __importStar(__webpack_require__(31));
-const os = __importStar(__webpack_require__(87));
-const path = __importStar(__webpack_require__(622));
-const httpm = __importStar(__webpack_require__(539));
-const semver = __importStar(__webpack_require__(280));
-const stream = __importStar(__webpack_require__(794));
-const util = __importStar(__webpack_require__(669));
-const v4_1 = __importDefault(__webpack_require__(826));
-const exec_1 = __webpack_require__(986);
-const assert_1 = __webpack_require__(357);
-const retry_helper_1 = __webpack_require__(979);
+const core = __importStar(__nested_webpack_require_169050__(470));
+const io = __importStar(__nested_webpack_require_169050__(1));
+const fs = __importStar(__nested_webpack_require_169050__(747));
+const mm = __importStar(__nested_webpack_require_169050__(31));
+const os = __importStar(__nested_webpack_require_169050__(87));
+const path = __importStar(__nested_webpack_require_169050__(622));
+const httpm = __importStar(__nested_webpack_require_169050__(539));
+const semver = __importStar(__nested_webpack_require_169050__(280));
+const stream = __importStar(__nested_webpack_require_169050__(794));
+const util = __importStar(__nested_webpack_require_169050__(669));
+const v4_1 = __importDefault(__nested_webpack_require_169050__(826));
+const exec_1 = __nested_webpack_require_169050__(986);
+const assert_1 = __nested_webpack_require_169050__(357);
+const retry_helper_1 = __nested_webpack_require_169050__(979);
 class HTTPError extends Error {
     constructor(httpStatusCode) {
         super(`Unexpected HTTP response: ${httpStatusCode}`);
@@ -6764,15 +6912,15 @@ function _getGlobal(key, defaultValue) {
 /***/ }),
 
 /***/ 539:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_191157__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const url = __webpack_require__(835);
-const http = __webpack_require__(605);
-const https = __webpack_require__(211);
-const pm = __webpack_require__(950);
+const url = __nested_webpack_require_191157__(835);
+const http = __nested_webpack_require_191157__(605);
+const https = __nested_webpack_require_191157__(211);
+const pm = __nested_webpack_require_191157__(950);
 let tunnel;
 var HttpCodes;
 (function (HttpCodes) {
@@ -7182,7 +7330,7 @@ class HttpClient {
         if (useProxy) {
             // If using proxy, need tunnel
             if (!tunnel) {
-                tunnel = __webpack_require__(413);
+                tunnel = __nested_webpack_require_191157__(413);
             }
             const agentOptions = {
                 maxSockets: maxSockets,
@@ -7354,12 +7502,12 @@ module.exports = YAMLException;
 /***/ }),
 
 /***/ 574:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_214923__) {
 
 "use strict";
 
 
-var Type = __webpack_require__(945);
+var Type = __nested_webpack_require_214923__(945);
 
 module.exports = new Type('tag:yaml.org,2002:str', {
   kind: 'scalar',
@@ -7370,7 +7518,7 @@ module.exports = new Type('tag:yaml.org,2002:str', {
 /***/ }),
 
 /***/ 581:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_215208__) {
 
 "use strict";
 // Standard YAML's Failsafe schema.
@@ -7380,14 +7528,14 @@ module.exports = new Type('tag:yaml.org,2002:str', {
 
 
 
-var Schema = __webpack_require__(43);
+var Schema = __nested_webpack_require_215208__(43);
 
 
 module.exports = new Schema({
   explicit: [
-    __webpack_require__(574),
-    __webpack_require__(921),
-    __webpack_require__(988)
+    __nested_webpack_require_215208__(574),
+    __nested_webpack_require_215208__(921),
+    __nested_webpack_require_215208__(988)
   ]
 });
 
@@ -7395,18 +7543,18 @@ module.exports = new Schema({
 /***/ }),
 
 /***/ 595:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_215585__) {
 
 module.exports = minimatch
 minimatch.Minimatch = Minimatch
 
 var path = { sep: '/' }
 try {
-  path = __webpack_require__(622)
+  path = __nested_webpack_require_215585__(622)
 } catch (er) {}
 
 var GLOBSTAR = minimatch.GLOBSTAR = Minimatch.GLOBSTAR = {}
-var expand = __webpack_require__(306)
+var expand = __nested_webpack_require_215585__(306)
 
 var plTypes = {
   '!': { open: '(?:(?!(?:', close: '))[^/]*?)'},
@@ -8325,13 +8473,13 @@ function regExpEscape (s) {
 /***/ }),
 
 /***/ 597:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_241028__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const pathHelper = __webpack_require__(972);
-const internal_match_kind_1 = __webpack_require__(327);
+const pathHelper = __nested_webpack_require_241028__(972);
+const internal_match_kind_1 = __nested_webpack_require_241028__(327);
 const IS_WINDOWS = process.platform === 'win32';
 /**
  * Given an array of patterns, returns an array of paths to search.
@@ -8406,12 +8554,12 @@ exports.partialMatch = partialMatch;
 /***/ }),
 
 /***/ 601:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_243470__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const core = __webpack_require__(470);
+const core = __nested_webpack_require_243470__(470);
 /**
  * Returns a copy with defaults filled in.
  */
@@ -8445,12 +8593,12 @@ exports.getOptions = getOptions;
 /***/ 605:
 /***/ (function(module) {
 
-module.exports = require("http");
+module.exports = __nested_webpack_require_2184__(605);
 
 /***/ }),
 
 /***/ 611:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_244778__) {
 
 "use strict";
 // Standard YAML's Core schema.
@@ -8463,12 +8611,12 @@ module.exports = require("http");
 
 
 
-var Schema = __webpack_require__(43);
+var Schema = __nested_webpack_require_244778__(43);
 
 
 module.exports = new Schema({
   include: [
-    __webpack_require__(23)
+    __nested_webpack_require_244778__(23)
   ]
 });
 
@@ -8478,7 +8626,7 @@ module.exports = new Schema({
 /***/ 614:
 /***/ (function(module) {
 
-module.exports = require("events");
+module.exports = __nested_webpack_require_2184__(614);
 
 /***/ }),
 
@@ -8552,17 +8700,17 @@ function range(a, b, str) {
 /***/ 622:
 /***/ (function(module) {
 
-module.exports = require("path");
+module.exports = __nested_webpack_require_2184__(622);
 
 /***/ }),
 
 /***/ 629:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_246635__) {
 
 "use strict";
 
 
-var Type = __webpack_require__(945);
+var Type = __nested_webpack_require_246635__(945);
 
 function resolveJavascriptRegExp(data) {
   if (data === null) return false;
@@ -8627,17 +8775,17 @@ module.exports = new Type('tag:yaml.org,2002:js/regexp', {
 /***/ 631:
 /***/ (function(module) {
 
-module.exports = require("net");
+module.exports = __nested_webpack_require_2184__(631);
 
 /***/ }),
 
 /***/ 633:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_248383__) {
 
 "use strict";
 
 
-var Type = __webpack_require__(945);
+var Type = __nested_webpack_require_248383__(945);
 
 function resolveYamlMerge(data) {
   return data === '<<' || data === null;
@@ -8651,8 +8799,8 @@ module.exports = new Type('tag:yaml.org,2002:merge', {
 
 /***/ }),
 
-/***/ 661:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 635:
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_248709__) {
 
 "use strict";
 
@@ -8676,48 +8824,92 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const core = __importStar(__webpack_require__(470));
-const fs = __importStar(__webpack_require__(747));
-const opts_1 = __webpack_require__(54);
-const installer_1 = __webpack_require__(923);
-const exec_1 = __webpack_require__(986);
-async function cabalConfig() {
-    let out = Buffer.from('');
-    const append = (b) => (out = Buffer.concat([out, b]));
-    await exec_1.exec('cabal', ['--help'], {
-        silent: true,
-        listeners: { stdout: append, stderr: append }
+exports.getOpts = exports.getDefaults = void 0;
+const core = __importStar(__nested_webpack_require_248709__(470));
+const fs_1 = __nested_webpack_require_248709__(747);
+const js_yaml_1 = __nested_webpack_require_248709__(414);
+const path_1 = __nested_webpack_require_248709__(622);
+const supported_versions = __importStar(__nested_webpack_require_248709__(329));
+function getDefaults() {
+    const inpts = js_yaml_1.safeLoad(fs_1.readFileSync(__nested_webpack_require_248709__.ab + "action.yml", 'utf8')).inputs;
+    const mkVersion = (v, vs) => ({
+        version: resolve(inpts[v].default, vs),
+        supported: vs
     });
-    return out.toString().trim().split('\n').slice(-1)[0].trim();
+    return {
+        ghc: mkVersion('ghc-version', supported_versions.ghc),
+        cabal: mkVersion('cabal-version', supported_versions.cabal),
+        stack: mkVersion('stack-version', supported_versions.stack)
+    };
 }
-(async () => {
-    try {
-        core.info('Preparing to setup a Haskell environment');
-        const opts = opts_1.getOpts(opts_1.getDefaults());
-        for (const [t, { resolved }] of Object.entries(opts).filter(o => o[1].enable))
-            await core.group(`Installing ${t} version ${resolved}`, async () => installer_1.installTool(t, resolved, process.platform));
-        if (opts.stack.setup)
-            await core.group('Pre-installing GHC with stack', async () => exec_1.exec('stack', ['setup', opts.ghc.resolved]));
-        if (opts.cabal.enable)
-            await core.group('Setting up cabal', async () => {
-                await exec_1.exec('cabal', ['user-config', 'update'], { silent: true });
-                const configFile = await cabalConfig();
-                if (process.platform === 'win32') {
-                    fs.appendFileSync(configFile, 'store-dir: C:\\sr\n');
-                    core.setOutput('cabal-store', 'C:\\sr');
-                }
-                else {
-                    core.setOutput('cabal-store', `${process.env.HOME}/.cabal/store`);
-                }
-                await exec_1.exec('cabal user-config update');
-                if (!opts.stack.enable)
-                    await exec_1.exec('cabal update');
-            });
+exports.getDefaults = getDefaults;
+function resolve(version, supported) {
+    var _a;
+    return version === 'latest'
+        ? supported[0]
+        : (_a = supported.find(v => v.startsWith(version))) !== null && _a !== void 0 ? _a : version;
+}
+function getOpts({ ghc, cabal, stack }) {
+    const stackNoGlobal = core.getInput('stack-no-global') !== '';
+    const stackSetupGhc = core.getInput('stack-setup-ghc') !== '';
+    const stackEnable = core.getInput('enable-stack') !== '';
+    const verInpt = {
+        ghc: core.getInput('ghc-version') || ghc.version,
+        cabal: core.getInput('cabal-version') || cabal.version,
+        stack: core.getInput('stack-version') || stack.version
+    };
+    const errors = [];
+    if (stackNoGlobal && !stackEnable) {
+        errors.push('enable-stack is required if stack-no-global is set');
     }
-    catch (error) {
-        core.setFailed(error.message);
+    if (stackSetupGhc && !stackEnable) {
+        errors.push('enable-stack is required if stack-setup-ghc is set');
     }
-})();
+    if (errors.length > 0) {
+        throw new Error(errors.join('\n'));
+    }
+    const opts = {
+        ghc: {
+            raw: verInpt.ghc,
+            resolved: resolve(verInpt.ghc, ghc.supported),
+            enable: !stackNoGlobal
+        },
+        cabal: {
+            raw: verInpt.cabal,
+            resolved: resolve(verInpt.cabal, cabal.supported),
+            enable: !stackNoGlobal
+        },
+        stack: {
+            raw: verInpt.stack,
+            resolved: resolve(verInpt.stack, stack.supported),
+            enable: stackEnable,
+            setup: core.getInput('stack-setup-ghc') !== ''
+        }
+    };
+    // eslint-disable-next-line github/array-foreach
+    Object.values(opts)
+        .filter(t => t.enable && t.raw !== t.resolved)
+        .forEach(t => core.info(`Resolved ${t.raw} to ${t.resolved}`));
+    core.debug(`Options are: ${JSON.stringify(opts)}`);
+    return opts;
+}
+exports.getOpts = getOpts;
+
+
+/***/ }),
+
+/***/ 656:
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_252386__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// Main entry point
+const lib_1 = __importDefault(__nested_webpack_require_252386__(387));
+lib_1.default();
 
 
 /***/ }),
@@ -8725,12 +8917,12 @@ async function cabalConfig() {
 /***/ 669:
 /***/ (function(module) {
 
-module.exports = require("util");
+module.exports = __nested_webpack_require_2184__(669);
 
 /***/ }),
 
 /***/ 672:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_252870__) {
 
 "use strict";
 
@@ -8745,9 +8937,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-const assert_1 = __webpack_require__(357);
-const fs = __webpack_require__(747);
-const path = __webpack_require__(622);
+const assert_1 = __nested_webpack_require_252870__(357);
+const fs = __nested_webpack_require_252870__(747);
+const path = __nested_webpack_require_252870__(622);
 _a = fs.promises, exports.chmod = _a.chmod, exports.copyFile = _a.copyFile, exports.lstat = _a.lstat, exports.mkdir = _a.mkdir, exports.readdir = _a.readdir, exports.readlink = _a.readlink, exports.rename = _a.rename, exports.rmdir = _a.rmdir, exports.stat = _a.stat, exports.symlink = _a.symlink, exports.unlink = _a.unlink;
 exports.IS_WINDOWS = process.platform === 'win32';
 function exists(fsPath) {
@@ -8932,17 +9124,17 @@ function isUnixExecutable(stats) {
 /***/ }),
 
 /***/ 685:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_260547__) {
 
 "use strict";
 
 
 /*eslint-disable no-use-before-define*/
 
-var common              = __webpack_require__(740);
-var YAMLException       = __webpack_require__(556);
-var DEFAULT_FULL_SCHEMA = __webpack_require__(910);
-var DEFAULT_SAFE_SCHEMA = __webpack_require__(723);
+var common              = __nested_webpack_require_260547__(740);
+var YAMLException       = __nested_webpack_require_260547__(556);
+var DEFAULT_FULL_SCHEMA = __nested_webpack_require_260547__(910);
+var DEFAULT_SAFE_SCHEMA = __nested_webpack_require_260547__(723);
 
 var _toString       = Object.prototype.toString;
 var _hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -9790,7 +9982,7 @@ module.exports.safeDump = safeDump;
 /***/ }),
 
 /***/ 686:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_288026__) {
 
 "use strict";
 
@@ -9811,12 +10003,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const os = __importStar(__webpack_require__(87));
-const events = __importStar(__webpack_require__(614));
-const child = __importStar(__webpack_require__(129));
-const path = __importStar(__webpack_require__(622));
-const io = __importStar(__webpack_require__(1));
-const ioUtil = __importStar(__webpack_require__(672));
+const os = __importStar(__nested_webpack_require_288026__(87));
+const events = __importStar(__nested_webpack_require_288026__(614));
+const child = __importStar(__nested_webpack_require_288026__(129));
+const path = __importStar(__nested_webpack_require_288026__(622));
+const io = __importStar(__nested_webpack_require_288026__(1));
+const ioUtil = __importStar(__nested_webpack_require_288026__(672));
 /* eslint-disable @typescript-eslint/unbound-method */
 const IS_WINDOWS = process.platform === 'win32';
 /*
@@ -10430,7 +10622,7 @@ module.exports = bytesToUuid;
 /***/ }),
 
 /***/ 723:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_313292__) {
 
 "use strict";
 // JS-YAML's default schema for `safeLoad` function.
@@ -10443,22 +10635,22 @@ module.exports = bytesToUuid;
 
 
 
-var Schema = __webpack_require__(43);
+var Schema = __nested_webpack_require_313292__(43);
 
 
 module.exports = new Schema({
   include: [
-    __webpack_require__(611)
+    __nested_webpack_require_313292__(611)
   ],
   implicit: [
-    __webpack_require__(841),
-    __webpack_require__(633)
+    __nested_webpack_require_313292__(841),
+    __nested_webpack_require_313292__(633)
   ],
   explicit: [
-    __webpack_require__(913),
-    __webpack_require__(842),
-    __webpack_require__(947),
-    __webpack_require__(100)
+    __nested_webpack_require_313292__(913),
+    __nested_webpack_require_313292__(842),
+    __nested_webpack_require_313292__(947),
+    __nested_webpack_require_313292__(100)
   ]
 });
 
@@ -10482,537 +10674,8 @@ exports.SearchState = SearchState;
 
 /***/ }),
 
-/***/ 740:
-/***/ (function(module) {
-
-"use strict";
-
-
-
-function isNothing(subject) {
-  return (typeof subject === 'undefined') || (subject === null);
-}
-
-
-function isObject(subject) {
-  return (typeof subject === 'object') && (subject !== null);
-}
-
-
-function toArray(sequence) {
-  if (Array.isArray(sequence)) return sequence;
-  else if (isNothing(sequence)) return [];
-
-  return [ sequence ];
-}
-
-
-function extend(target, source) {
-  var index, length, key, sourceKeys;
-
-  if (source) {
-    sourceKeys = Object.keys(source);
-
-    for (index = 0, length = sourceKeys.length; index < length; index += 1) {
-      key = sourceKeys[index];
-      target[key] = source[key];
-    }
-  }
-
-  return target;
-}
-
-
-function repeat(string, count) {
-  var result = '', cycle;
-
-  for (cycle = 0; cycle < count; cycle += 1) {
-    result += string;
-  }
-
-  return result;
-}
-
-
-function isNegativeZero(number) {
-  return (number === 0) && (Number.NEGATIVE_INFINITY === 1 / number);
-}
-
-
-module.exports.isNothing      = isNothing;
-module.exports.isObject       = isObject;
-module.exports.toArray        = toArray;
-module.exports.repeat         = repeat;
-module.exports.isNegativeZero = isNegativeZero;
-module.exports.extend         = extend;
-
-
-/***/ }),
-
-/***/ 747:
-/***/ (function(module) {
-
-module.exports = require("fs");
-
-/***/ }),
-
-/***/ 794:
-/***/ (function(module) {
-
-module.exports = require("stream");
-
-/***/ }),
-
-/***/ 809:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-"use strict";
-
-
-var Type = __webpack_require__(945);
-
-function resolveYamlNull(data) {
-  if (data === null) return true;
-
-  var max = data.length;
-
-  return (max === 1 && data === '~') ||
-         (max === 4 && (data === 'null' || data === 'Null' || data === 'NULL'));
-}
-
-function constructYamlNull() {
-  return null;
-}
-
-function isNull(object) {
-  return object === null;
-}
-
-module.exports = new Type('tag:yaml.org,2002:null', {
-  kind: 'scalar',
-  resolve: resolveYamlNull,
-  construct: constructYamlNull,
-  predicate: isNull,
-  represent: {
-    canonical: function () { return '~';    },
-    lowercase: function () { return 'null'; },
-    uppercase: function () { return 'NULL'; },
-    camelcase: function () { return 'Null'; }
-  },
-  defaultStyle: 'lowercase'
-});
-
-
-/***/ }),
-
-/***/ 826:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-var rng = __webpack_require__(139);
-var bytesToUuid = __webpack_require__(722);
-
-function v4(options, buf, offset) {
-  var i = buf && offset || 0;
-
-  if (typeof(options) == 'string') {
-    buf = options === 'binary' ? new Array(16) : null;
-    options = null;
-  }
-  options = options || {};
-
-  var rnds = options.random || (options.rng || rng)();
-
-  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
-  rnds[6] = (rnds[6] & 0x0f) | 0x40;
-  rnds[8] = (rnds[8] & 0x3f) | 0x80;
-
-  // Copy bytes to buffer, if provided
-  if (buf) {
-    for (var ii = 0; ii < 16; ++ii) {
-      buf[i + ii] = rnds[ii];
-    }
-  }
-
-  return buf || bytesToUuid(rnds);
-}
-
-module.exports = v4;
-
-
-/***/ }),
-
-/***/ 835:
-/***/ (function(module) {
-
-module.exports = require("url");
-
-/***/ }),
-
-/***/ 841:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-"use strict";
-
-
-var Type = __webpack_require__(945);
-
-var YAML_DATE_REGEXP = new RegExp(
-  '^([0-9][0-9][0-9][0-9])'          + // [1] year
-  '-([0-9][0-9])'                    + // [2] month
-  '-([0-9][0-9])$');                   // [3] day
-
-var YAML_TIMESTAMP_REGEXP = new RegExp(
-  '^([0-9][0-9][0-9][0-9])'          + // [1] year
-  '-([0-9][0-9]?)'                   + // [2] month
-  '-([0-9][0-9]?)'                   + // [3] day
-  '(?:[Tt]|[ \\t]+)'                 + // ...
-  '([0-9][0-9]?)'                    + // [4] hour
-  ':([0-9][0-9])'                    + // [5] minute
-  ':([0-9][0-9])'                    + // [6] second
-  '(?:\\.([0-9]*))?'                 + // [7] fraction
-  '(?:[ \\t]*(Z|([-+])([0-9][0-9]?)' + // [8] tz [9] tz_sign [10] tz_hour
-  '(?::([0-9][0-9]))?))?$');           // [11] tz_minute
-
-function resolveYamlTimestamp(data) {
-  if (data === null) return false;
-  if (YAML_DATE_REGEXP.exec(data) !== null) return true;
-  if (YAML_TIMESTAMP_REGEXP.exec(data) !== null) return true;
-  return false;
-}
-
-function constructYamlTimestamp(data) {
-  var match, year, month, day, hour, minute, second, fraction = 0,
-      delta = null, tz_hour, tz_minute, date;
-
-  match = YAML_DATE_REGEXP.exec(data);
-  if (match === null) match = YAML_TIMESTAMP_REGEXP.exec(data);
-
-  if (match === null) throw new Error('Date resolve error');
-
-  // match: [1] year [2] month [3] day
-
-  year = +(match[1]);
-  month = +(match[2]) - 1; // JS month starts with 0
-  day = +(match[3]);
-
-  if (!match[4]) { // no hour
-    return new Date(Date.UTC(year, month, day));
-  }
-
-  // match: [4] hour [5] minute [6] second [7] fraction
-
-  hour = +(match[4]);
-  minute = +(match[5]);
-  second = +(match[6]);
-
-  if (match[7]) {
-    fraction = match[7].slice(0, 3);
-    while (fraction.length < 3) { // milli-seconds
-      fraction += '0';
-    }
-    fraction = +fraction;
-  }
-
-  // match: [8] tz [9] tz_sign [10] tz_hour [11] tz_minute
-
-  if (match[9]) {
-    tz_hour = +(match[10]);
-    tz_minute = +(match[11] || 0);
-    delta = (tz_hour * 60 + tz_minute) * 60000; // delta in mili-seconds
-    if (match[9] === '-') delta = -delta;
-  }
-
-  date = new Date(Date.UTC(year, month, day, hour, minute, second, fraction));
-
-  if (delta) date.setTime(date.getTime() - delta);
-
-  return date;
-}
-
-function representYamlTimestamp(object /*, style*/) {
-  return object.toISOString();
-}
-
-module.exports = new Type('tag:yaml.org,2002:timestamp', {
-  kind: 'scalar',
-  resolve: resolveYamlTimestamp,
-  construct: constructYamlTimestamp,
-  instanceOf: Date,
-  represent: representYamlTimestamp
-});
-
-
-/***/ }),
-
-/***/ 842:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-"use strict";
-
-
-var Type = __webpack_require__(945);
-
-var _hasOwnProperty = Object.prototype.hasOwnProperty;
-var _toString       = Object.prototype.toString;
-
-function resolveYamlOmap(data) {
-  if (data === null) return true;
-
-  var objectKeys = [], index, length, pair, pairKey, pairHasKey,
-      object = data;
-
-  for (index = 0, length = object.length; index < length; index += 1) {
-    pair = object[index];
-    pairHasKey = false;
-
-    if (_toString.call(pair) !== '[object Object]') return false;
-
-    for (pairKey in pair) {
-      if (_hasOwnProperty.call(pair, pairKey)) {
-        if (!pairHasKey) pairHasKey = true;
-        else return false;
-      }
-    }
-
-    if (!pairHasKey) return false;
-
-    if (objectKeys.indexOf(pairKey) === -1) objectKeys.push(pairKey);
-    else return false;
-  }
-
-  return true;
-}
-
-function constructYamlOmap(data) {
-  return data !== null ? data : [];
-}
-
-module.exports = new Type('tag:yaml.org,2002:omap', {
-  kind: 'sequence',
-  resolve: resolveYamlOmap,
-  construct: constructYamlOmap
-});
-
-
-/***/ }),
-
-/***/ 896:
-/***/ (function(module) {
-
-module.exports = function (xs, fn) {
-    var res = [];
-    for (var i = 0; i < xs.length; i++) {
-        var x = fn(xs[i], i);
-        if (isArray(x)) res.push.apply(res, x);
-        else res.push(x);
-    }
-    return res;
-};
-
-var isArray = Array.isArray || function (xs) {
-    return Object.prototype.toString.call(xs) === '[object Array]';
-};
-
-
-/***/ }),
-
-/***/ 910:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-"use strict";
-// JS-YAML's default schema for `load` function.
-// It is not described in the YAML specification.
-//
-// This schema is based on JS-YAML's default safe schema and includes
-// JavaScript-specific types: !!js/undefined, !!js/regexp and !!js/function.
-//
-// Also this schema is used as default base schema at `Schema.create` function.
-
-
-
-
-
-var Schema = __webpack_require__(43);
-
-
-module.exports = Schema.DEFAULT = new Schema({
-  include: [
-    __webpack_require__(723)
-  ],
-  explicit: [
-    __webpack_require__(386),
-    __webpack_require__(629),
-    __webpack_require__(352)
-  ]
-});
-
-
-/***/ }),
-
-/***/ 913:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-"use strict";
-
-
-/*eslint-disable no-bitwise*/
-
-var NodeBuffer;
-
-try {
-  // A trick for browserified version, to not include `Buffer` shim
-  var _require = require;
-  NodeBuffer = _require('buffer').Buffer;
-} catch (__) {}
-
-var Type       = __webpack_require__(945);
-
-
-// [ 64, 65, 66 ] -> [ padding, CR, LF ]
-var BASE64_MAP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\n\r';
-
-
-function resolveYamlBinary(data) {
-  if (data === null) return false;
-
-  var code, idx, bitlen = 0, max = data.length, map = BASE64_MAP;
-
-  // Convert one by one.
-  for (idx = 0; idx < max; idx++) {
-    code = map.indexOf(data.charAt(idx));
-
-    // Skip CR/LF
-    if (code > 64) continue;
-
-    // Fail on illegal characters
-    if (code < 0) return false;
-
-    bitlen += 6;
-  }
-
-  // If there are any bits left, source was corrupted
-  return (bitlen % 8) === 0;
-}
-
-function constructYamlBinary(data) {
-  var idx, tailbits,
-      input = data.replace(/[\r\n=]/g, ''), // remove CR/LF & padding to simplify scan
-      max = input.length,
-      map = BASE64_MAP,
-      bits = 0,
-      result = [];
-
-  // Collect by 6*4 bits (3 bytes)
-
-  for (idx = 0; idx < max; idx++) {
-    if ((idx % 4 === 0) && idx) {
-      result.push((bits >> 16) & 0xFF);
-      result.push((bits >> 8) & 0xFF);
-      result.push(bits & 0xFF);
-    }
-
-    bits = (bits << 6) | map.indexOf(input.charAt(idx));
-  }
-
-  // Dump tail
-
-  tailbits = (max % 4) * 6;
-
-  if (tailbits === 0) {
-    result.push((bits >> 16) & 0xFF);
-    result.push((bits >> 8) & 0xFF);
-    result.push(bits & 0xFF);
-  } else if (tailbits === 18) {
-    result.push((bits >> 10) & 0xFF);
-    result.push((bits >> 2) & 0xFF);
-  } else if (tailbits === 12) {
-    result.push((bits >> 4) & 0xFF);
-  }
-
-  // Wrap into Buffer for NodeJS and leave Array for browser
-  if (NodeBuffer) {
-    // Support node 6.+ Buffer API when available
-    return NodeBuffer.from ? NodeBuffer.from(result) : new NodeBuffer(result);
-  }
-
-  return result;
-}
-
-function representYamlBinary(object /*, style*/) {
-  var result = '', bits = 0, idx, tail,
-      max = object.length,
-      map = BASE64_MAP;
-
-  // Convert every three bytes to 4 ASCII characters.
-
-  for (idx = 0; idx < max; idx++) {
-    if ((idx % 3 === 0) && idx) {
-      result += map[(bits >> 18) & 0x3F];
-      result += map[(bits >> 12) & 0x3F];
-      result += map[(bits >> 6) & 0x3F];
-      result += map[bits & 0x3F];
-    }
-
-    bits = (bits << 8) + object[idx];
-  }
-
-  // Dump tail
-
-  tail = max % 3;
-
-  if (tail === 0) {
-    result += map[(bits >> 18) & 0x3F];
-    result += map[(bits >> 12) & 0x3F];
-    result += map[(bits >> 6) & 0x3F];
-    result += map[bits & 0x3F];
-  } else if (tail === 2) {
-    result += map[(bits >> 10) & 0x3F];
-    result += map[(bits >> 4) & 0x3F];
-    result += map[(bits << 2) & 0x3F];
-    result += map[64];
-  } else if (tail === 1) {
-    result += map[(bits >> 2) & 0x3F];
-    result += map[(bits << 4) & 0x3F];
-    result += map[64];
-    result += map[64];
-  }
-
-  return result;
-}
-
-function isBinary(object) {
-  return NodeBuffer && NodeBuffer.isBuffer(object);
-}
-
-module.exports = new Type('tag:yaml.org,2002:binary', {
-  kind: 'scalar',
-  resolve: resolveYamlBinary,
-  construct: constructYamlBinary,
-  predicate: isBinary,
-  represent: representYamlBinary
-});
-
-
-/***/ }),
-
-/***/ 921:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-"use strict";
-
-
-var Type = __webpack_require__(945);
-
-module.exports = new Type('tag:yaml.org,2002:seq', {
-  kind: 'sequence',
-  construct: function (data) { return data !== null ? data : []; }
-});
-
-
-/***/ }),
-
-/***/ 923:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 734:
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_314334__) {
 
 "use strict";
 
@@ -11037,13 +10700,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.installTool = void 0;
-const core = __importStar(__webpack_require__(470));
-const exec_1 = __webpack_require__(986);
-const io_1 = __webpack_require__(1);
-const glob_1 = __webpack_require__(281);
-const tc = __importStar(__webpack_require__(533));
-const fs_1 = __webpack_require__(747);
-const path_1 = __webpack_require__(622);
+const core = __importStar(__nested_webpack_require_314334__(470));
+const exec_1 = __nested_webpack_require_314334__(986);
+const io_1 = __nested_webpack_require_314334__(1);
+const glob_1 = __nested_webpack_require_314334__(281);
+const tc = __importStar(__nested_webpack_require_314334__(533));
+const fs_1 = __nested_webpack_require_314334__(747);
+const path_1 = __nested_webpack_require_314334__(622);
 function failed(tool, version) {
     throw new Error(`All install methods for ${tool} ${version} failed`);
 }
@@ -11219,13 +10882,780 @@ function getChocoPath(tool, version) {
 
 /***/ }),
 
-/***/ 945:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ 740:
+/***/ (function(module) {
 
 "use strict";
 
 
-var YAMLException = __webpack_require__(556);
+
+function isNothing(subject) {
+  return (typeof subject === 'undefined') || (subject === null);
+}
+
+
+function isObject(subject) {
+  return (typeof subject === 'object') && (subject !== null);
+}
+
+
+function toArray(sequence) {
+  if (Array.isArray(sequence)) return sequence;
+  else if (isNothing(sequence)) return [];
+
+  return [ sequence ];
+}
+
+
+function extend(target, source) {
+  var index, length, key, sourceKeys;
+
+  if (source) {
+    sourceKeys = Object.keys(source);
+
+    for (index = 0, length = sourceKeys.length; index < length; index += 1) {
+      key = sourceKeys[index];
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+
+function repeat(string, count) {
+  var result = '', cycle;
+
+  for (cycle = 0; cycle < count; cycle += 1) {
+    result += string;
+  }
+
+  return result;
+}
+
+
+function isNegativeZero(number) {
+  return (number === 0) && (Number.NEGATIVE_INFINITY === 1 / number);
+}
+
+
+module.exports.isNothing      = isNothing;
+module.exports.isObject       = isObject;
+module.exports.toArray        = toArray;
+module.exports.repeat         = repeat;
+module.exports.isNegativeZero = isNegativeZero;
+module.exports.extend         = extend;
+
+
+/***/ }),
+
+/***/ 747:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(747);
+
+/***/ }),
+
+/***/ 794:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(413);
+
+/***/ }),
+
+/***/ 809:
+/***/ (function(module, __unusedexports, __nested_webpack_require_324225__) {
+
+"use strict";
+
+
+var Type = __nested_webpack_require_324225__(945);
+
+function resolveYamlNull(data) {
+  if (data === null) return true;
+
+  var max = data.length;
+
+  return (max === 1 && data === '~') ||
+         (max === 4 && (data === 'null' || data === 'Null' || data === 'NULL'));
+}
+
+function constructYamlNull() {
+  return null;
+}
+
+function isNull(object) {
+  return object === null;
+}
+
+module.exports = new Type('tag:yaml.org,2002:null', {
+  kind: 'scalar',
+  resolve: resolveYamlNull,
+  construct: constructYamlNull,
+  predicate: isNull,
+  represent: {
+    canonical: function () { return '~';    },
+    lowercase: function () { return 'null'; },
+    uppercase: function () { return 'NULL'; },
+    camelcase: function () { return 'Null'; }
+  },
+  defaultStyle: 'lowercase'
+});
+
+
+/***/ }),
+
+/***/ 826:
+/***/ (function(module, __unusedexports, __nested_webpack_require_325082__) {
+
+var rng = __nested_webpack_require_325082__(139);
+var bytesToUuid = __nested_webpack_require_325082__(722);
+
+function v4(options, buf, offset) {
+  var i = buf && offset || 0;
+
+  if (typeof(options) == 'string') {
+    buf = options === 'binary' ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] & 0x0f) | 0x40;
+  rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii < 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}
+
+module.exports = v4;
+
+
+/***/ }),
+
+/***/ 835:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(835);
+
+/***/ }),
+
+/***/ 841:
+/***/ (function(module, __unusedexports, __nested_webpack_require_325934__) {
+
+"use strict";
+
+
+var Type = __nested_webpack_require_325934__(945);
+
+var YAML_DATE_REGEXP = new RegExp(
+  '^([0-9][0-9][0-9][0-9])'          + // [1] year
+  '-([0-9][0-9])'                    + // [2] month
+  '-([0-9][0-9])$');                   // [3] day
+
+var YAML_TIMESTAMP_REGEXP = new RegExp(
+  '^([0-9][0-9][0-9][0-9])'          + // [1] year
+  '-([0-9][0-9]?)'                   + // [2] month
+  '-([0-9][0-9]?)'                   + // [3] day
+  '(?:[Tt]|[ \\t]+)'                 + // ...
+  '([0-9][0-9]?)'                    + // [4] hour
+  ':([0-9][0-9])'                    + // [5] minute
+  ':([0-9][0-9])'                    + // [6] second
+  '(?:\\.([0-9]*))?'                 + // [7] fraction
+  '(?:[ \\t]*(Z|([-+])([0-9][0-9]?)' + // [8] tz [9] tz_sign [10] tz_hour
+  '(?::([0-9][0-9]))?))?$');           // [11] tz_minute
+
+function resolveYamlTimestamp(data) {
+  if (data === null) return false;
+  if (YAML_DATE_REGEXP.exec(data) !== null) return true;
+  if (YAML_TIMESTAMP_REGEXP.exec(data) !== null) return true;
+  return false;
+}
+
+function constructYamlTimestamp(data) {
+  var match, year, month, day, hour, minute, second, fraction = 0,
+      delta = null, tz_hour, tz_minute, date;
+
+  match = YAML_DATE_REGEXP.exec(data);
+  if (match === null) match = YAML_TIMESTAMP_REGEXP.exec(data);
+
+  if (match === null) throw new Error('Date resolve error');
+
+  // match: [1] year [2] month [3] day
+
+  year = +(match[1]);
+  month = +(match[2]) - 1; // JS month starts with 0
+  day = +(match[3]);
+
+  if (!match[4]) { // no hour
+    return new Date(Date.UTC(year, month, day));
+  }
+
+  // match: [4] hour [5] minute [6] second [7] fraction
+
+  hour = +(match[4]);
+  minute = +(match[5]);
+  second = +(match[6]);
+
+  if (match[7]) {
+    fraction = match[7].slice(0, 3);
+    while (fraction.length < 3) { // milli-seconds
+      fraction += '0';
+    }
+    fraction = +fraction;
+  }
+
+  // match: [8] tz [9] tz_sign [10] tz_hour [11] tz_minute
+
+  if (match[9]) {
+    tz_hour = +(match[10]);
+    tz_minute = +(match[11] || 0);
+    delta = (tz_hour * 60 + tz_minute) * 60000; // delta in mili-seconds
+    if (match[9] === '-') delta = -delta;
+  }
+
+  date = new Date(Date.UTC(year, month, day, hour, minute, second, fraction));
+
+  if (delta) date.setTime(date.getTime() - delta);
+
+  return date;
+}
+
+function representYamlTimestamp(object /*, style*/) {
+  return object.toISOString();
+}
+
+module.exports = new Type('tag:yaml.org,2002:timestamp', {
+  kind: 'scalar',
+  resolve: resolveYamlTimestamp,
+  construct: constructYamlTimestamp,
+  instanceOf: Date,
+  represent: representYamlTimestamp
+});
+
+
+/***/ }),
+
+/***/ 842:
+/***/ (function(module, __unusedexports, __nested_webpack_require_328601__) {
+
+"use strict";
+
+
+var Type = __nested_webpack_require_328601__(945);
+
+var _hasOwnProperty = Object.prototype.hasOwnProperty;
+var _toString       = Object.prototype.toString;
+
+function resolveYamlOmap(data) {
+  if (data === null) return true;
+
+  var objectKeys = [], index, length, pair, pairKey, pairHasKey,
+      object = data;
+
+  for (index = 0, length = object.length; index < length; index += 1) {
+    pair = object[index];
+    pairHasKey = false;
+
+    if (_toString.call(pair) !== '[object Object]') return false;
+
+    for (pairKey in pair) {
+      if (_hasOwnProperty.call(pair, pairKey)) {
+        if (!pairHasKey) pairHasKey = true;
+        else return false;
+      }
+    }
+
+    if (!pairHasKey) return false;
+
+    if (objectKeys.indexOf(pairKey) === -1) objectKeys.push(pairKey);
+    else return false;
+  }
+
+  return true;
+}
+
+function constructYamlOmap(data) {
+  return data !== null ? data : [];
+}
+
+module.exports = new Type('tag:yaml.org,2002:omap', {
+  kind: 'sequence',
+  resolve: resolveYamlOmap,
+  construct: constructYamlOmap
+});
+
+
+/***/ }),
+
+/***/ 896:
+/***/ (function(module) {
+
+module.exports = function (xs, fn) {
+    var res = [];
+    for (var i = 0; i < xs.length; i++) {
+        var x = fn(xs[i], i);
+        if (isArray(x)) res.push.apply(res, x);
+        else res.push(x);
+    }
+    return res;
+};
+
+var isArray = Array.isArray || function (xs) {
+    return Object.prototype.toString.call(xs) === '[object Array]';
+};
+
+
+/***/ }),
+
+/***/ 910:
+/***/ (function(module, __unusedexports, __nested_webpack_require_330116__) {
+
+"use strict";
+// JS-YAML's default schema for `load` function.
+// It is not described in the YAML specification.
+//
+// This schema is based on JS-YAML's default safe schema and includes
+// JavaScript-specific types: !!js/undefined, !!js/regexp and !!js/function.
+//
+// Also this schema is used as default base schema at `Schema.create` function.
+
+
+
+
+
+var Schema = __nested_webpack_require_330116__(43);
+
+
+module.exports = Schema.DEFAULT = new Schema({
+  include: [
+    __nested_webpack_require_330116__(723)
+  ],
+  explicit: [
+    __nested_webpack_require_330116__(386),
+    __nested_webpack_require_330116__(629),
+    __nested_webpack_require_330116__(352)
+  ]
+});
+
+
+/***/ }),
+
+/***/ 913:
+/***/ (function(module, __unusedexports, __nested_webpack_require_330801__) {
+
+"use strict";
+
+
+/*eslint-disable no-bitwise*/
+
+var NodeBuffer;
+
+try {
+  // A trick for browserified version, to not include `Buffer` shim
+  var _require = require;
+  NodeBuffer = _require('buffer').Buffer;
+} catch (__) {}
+
+var Type       = __nested_webpack_require_330801__(945);
+
+
+// [ 64, 65, 66 ] -> [ padding, CR, LF ]
+var BASE64_MAP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\n\r';
+
+
+function resolveYamlBinary(data) {
+  if (data === null) return false;
+
+  var code, idx, bitlen = 0, max = data.length, map = BASE64_MAP;
+
+  // Convert one by one.
+  for (idx = 0; idx < max; idx++) {
+    code = map.indexOf(data.charAt(idx));
+
+    // Skip CR/LF
+    if (code > 64) continue;
+
+    // Fail on illegal characters
+    if (code < 0) return false;
+
+    bitlen += 6;
+  }
+
+  // If there are any bits left, source was corrupted
+  return (bitlen % 8) === 0;
+}
+
+function constructYamlBinary(data) {
+  var idx, tailbits,
+      input = data.replace(/[\r\n=]/g, ''), // remove CR/LF & padding to simplify scan
+      max = input.length,
+      map = BASE64_MAP,
+      bits = 0,
+      result = [];
+
+  // Collect by 6*4 bits (3 bytes)
+
+  for (idx = 0; idx < max; idx++) {
+    if ((idx % 4 === 0) && idx) {
+      result.push((bits >> 16) & 0xFF);
+      result.push((bits >> 8) & 0xFF);
+      result.push(bits & 0xFF);
+    }
+
+    bits = (bits << 6) | map.indexOf(input.charAt(idx));
+  }
+
+  // Dump tail
+
+  tailbits = (max % 4) * 6;
+
+  if (tailbits === 0) {
+    result.push((bits >> 16) & 0xFF);
+    result.push((bits >> 8) & 0xFF);
+    result.push(bits & 0xFF);
+  } else if (tailbits === 18) {
+    result.push((bits >> 10) & 0xFF);
+    result.push((bits >> 2) & 0xFF);
+  } else if (tailbits === 12) {
+    result.push((bits >> 4) & 0xFF);
+  }
+
+  // Wrap into Buffer for NodeJS and leave Array for browser
+  if (NodeBuffer) {
+    // Support node 6.+ Buffer API when available
+    return NodeBuffer.from ? NodeBuffer.from(result) : new NodeBuffer(result);
+  }
+
+  return result;
+}
+
+function representYamlBinary(object /*, style*/) {
+  var result = '', bits = 0, idx, tail,
+      max = object.length,
+      map = BASE64_MAP;
+
+  // Convert every three bytes to 4 ASCII characters.
+
+  for (idx = 0; idx < max; idx++) {
+    if ((idx % 3 === 0) && idx) {
+      result += map[(bits >> 18) & 0x3F];
+      result += map[(bits >> 12) & 0x3F];
+      result += map[(bits >> 6) & 0x3F];
+      result += map[bits & 0x3F];
+    }
+
+    bits = (bits << 8) + object[idx];
+  }
+
+  // Dump tail
+
+  tail = max % 3;
+
+  if (tail === 0) {
+    result += map[(bits >> 18) & 0x3F];
+    result += map[(bits >> 12) & 0x3F];
+    result += map[(bits >> 6) & 0x3F];
+    result += map[bits & 0x3F];
+  } else if (tail === 2) {
+    result += map[(bits >> 10) & 0x3F];
+    result += map[(bits >> 4) & 0x3F];
+    result += map[(bits << 2) & 0x3F];
+    result += map[64];
+  } else if (tail === 1) {
+    result += map[(bits >> 2) & 0x3F];
+    result += map[(bits << 4) & 0x3F];
+    result += map[64];
+    result += map[64];
+  }
+
+  return result;
+}
+
+function isBinary(object) {
+  return NodeBuffer && NodeBuffer.isBuffer(object);
+}
+
+module.exports = new Type('tag:yaml.org,2002:binary', {
+  kind: 'scalar',
+  resolve: resolveYamlBinary,
+  construct: constructYamlBinary,
+  predicate: isBinary,
+  represent: representYamlBinary
+});
+
+
+/***/ }),
+
+/***/ 921:
+/***/ (function(module, __unusedexports, __nested_webpack_require_334187__) {
+
+"use strict";
+
+
+var Type = __nested_webpack_require_334187__(945);
+
+module.exports = new Type('tag:yaml.org,2002:seq', {
+  kind: 'sequence',
+  construct: function (data) { return data !== null ? data : []; }
+});
+
+
+/***/ }),
+
+/***/ 923:
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_334474__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const assert = __nested_webpack_require_334474__(357);
+const os = __nested_webpack_require_334474__(87);
+const path = __nested_webpack_require_334474__(622);
+const pathHelper = __nested_webpack_require_334474__(972);
+const minimatch_1 = __nested_webpack_require_334474__(595);
+const internal_match_kind_1 = __nested_webpack_require_334474__(327);
+const internal_path_1 = __nested_webpack_require_334474__(383);
+const IS_WINDOWS = process.platform === 'win32';
+class Pattern {
+    constructor(patternOrNegate, segments) {
+        /**
+         * Indicates whether matches should be excluded from the result set
+         */
+        this.negate = false;
+        // Pattern overload
+        let pattern;
+        if (typeof patternOrNegate === 'string') {
+            pattern = patternOrNegate.trim();
+        }
+        // Segments overload
+        else {
+            // Convert to pattern
+            segments = segments || [];
+            assert(segments.length, `Parameter 'segments' must not empty`);
+            const root = Pattern.getLiteral(segments[0]);
+            assert(root && pathHelper.hasAbsoluteRoot(root), `Parameter 'segments' first element must be a root path`);
+            pattern = new internal_path_1.Path(segments).toString().trim();
+            if (patternOrNegate) {
+                pattern = `!${pattern}`;
+            }
+        }
+        // Negate
+        while (pattern.startsWith('!')) {
+            this.negate = !this.negate;
+            pattern = pattern.substr(1).trim();
+        }
+        // Normalize slashes and ensures absolute root
+        pattern = Pattern.fixupPattern(pattern);
+        // Segments
+        this.segments = new internal_path_1.Path(pattern).segments;
+        // Trailing slash indicates the pattern should only match directories, not regular files
+        this.trailingSeparator = pathHelper
+            .normalizeSeparators(pattern)
+            .endsWith(path.sep);
+        pattern = pathHelper.safeTrimTrailingSeparator(pattern);
+        // Search path (literal path prior to the first glob segment)
+        let foundGlob = false;
+        const searchSegments = this.segments
+            .map(x => Pattern.getLiteral(x))
+            .filter(x => !foundGlob && !(foundGlob = x === ''));
+        this.searchPath = new internal_path_1.Path(searchSegments).toString();
+        // Root RegExp (required when determining partial match)
+        this.rootRegExp = new RegExp(Pattern.regExpEscape(searchSegments[0]), IS_WINDOWS ? 'i' : '');
+        // Create minimatch
+        const minimatchOptions = {
+            dot: true,
+            nobrace: true,
+            nocase: IS_WINDOWS,
+            nocomment: true,
+            noext: true,
+            nonegate: true
+        };
+        pattern = IS_WINDOWS ? pattern.replace(/\\/g, '/') : pattern;
+        this.minimatch = new minimatch_1.Minimatch(pattern, minimatchOptions);
+    }
+    /**
+     * Matches the pattern against the specified path
+     */
+    match(itemPath) {
+        // Last segment is globstar?
+        if (this.segments[this.segments.length - 1] === '**') {
+            // Normalize slashes
+            itemPath = pathHelper.normalizeSeparators(itemPath);
+            // Append a trailing slash. Otherwise Minimatch will not match the directory immediately
+            // preceeding the globstar. For example, given the pattern `/foo/**`, Minimatch returns
+            // false for `/foo` but returns true for `/foo/`. Append a trailing slash to handle that quirk.
+            if (!itemPath.endsWith(path.sep)) {
+                // Note, this is safe because the constructor ensures the pattern has an absolute root.
+                // For example, formats like C: and C:foo on Windows are resolved to an aboslute root.
+                itemPath = `${itemPath}${path.sep}`;
+            }
+        }
+        else {
+            // Normalize slashes and trim unnecessary trailing slash
+            itemPath = pathHelper.safeTrimTrailingSeparator(itemPath);
+        }
+        // Match
+        if (this.minimatch.match(itemPath)) {
+            return this.trailingSeparator ? internal_match_kind_1.MatchKind.Directory : internal_match_kind_1.MatchKind.All;
+        }
+        return internal_match_kind_1.MatchKind.None;
+    }
+    /**
+     * Indicates whether the pattern may match descendants of the specified path
+     */
+    partialMatch(itemPath) {
+        // Normalize slashes and trim unnecessary trailing slash
+        itemPath = pathHelper.safeTrimTrailingSeparator(itemPath);
+        // matchOne does not handle root path correctly
+        if (pathHelper.dirname(itemPath) === itemPath) {
+            return this.rootRegExp.test(itemPath);
+        }
+        return this.minimatch.matchOne(itemPath.split(IS_WINDOWS ? /\\+/ : /\/+/), this.minimatch.set[0], true);
+    }
+    /**
+     * Escapes glob patterns within a path
+     */
+    static globEscape(s) {
+        return (IS_WINDOWS ? s : s.replace(/\\/g, '\\\\')) // escape '\' on Linux/macOS
+            .replace(/(\[)(?=[^/]+\])/g, '[[]') // escape '[' when ']' follows within the path segment
+            .replace(/\?/g, '[?]') // escape '?'
+            .replace(/\*/g, '[*]'); // escape '*'
+    }
+    /**
+     * Normalizes slashes and ensures absolute root
+     */
+    static fixupPattern(pattern) {
+        // Empty
+        assert(pattern, 'pattern cannot be empty');
+        // Must not contain `.` segment, unless first segment
+        // Must not contain `..` segment
+        const literalSegments = new internal_path_1.Path(pattern).segments.map(x => Pattern.getLiteral(x));
+        assert(literalSegments.every((x, i) => (x !== '.' || i === 0) && x !== '..'), `Invalid pattern '${pattern}'. Relative pathing '.' and '..' is not allowed.`);
+        // Must not contain globs in root, e.g. Windows UNC path \\foo\b*r
+        assert(!pathHelper.hasRoot(pattern) || literalSegments[0], `Invalid pattern '${pattern}'. Root segment must not contain globs.`);
+        // Normalize slashes
+        pattern = pathHelper.normalizeSeparators(pattern);
+        // Replace leading `.` segment
+        if (pattern === '.' || pattern.startsWith(`.${path.sep}`)) {
+            pattern = Pattern.globEscape(process.cwd()) + pattern.substr(1);
+        }
+        // Replace leading `~` segment
+        else if (pattern === '~' || pattern.startsWith(`~${path.sep}`)) {
+            const homedir = os.homedir();
+            assert(homedir, 'Unable to determine HOME directory');
+            assert(pathHelper.hasAbsoluteRoot(homedir), `Expected HOME directory to be a rooted path. Actual '${homedir}'`);
+            pattern = Pattern.globEscape(homedir) + pattern.substr(1);
+        }
+        // Replace relative drive root, e.g. pattern is C: or C:foo
+        else if (IS_WINDOWS &&
+            (pattern.match(/^[A-Z]:$/i) || pattern.match(/^[A-Z]:[^\\]/i))) {
+            let root = pathHelper.ensureAbsoluteRoot('C:\\dummy-root', pattern.substr(0, 2));
+            if (pattern.length > 2 && !root.endsWith('\\')) {
+                root += '\\';
+            }
+            pattern = Pattern.globEscape(root) + pattern.substr(2);
+        }
+        // Replace relative root, e.g. pattern is \ or \foo
+        else if (IS_WINDOWS && (pattern === '\\' || pattern.match(/^\\[^\\]/))) {
+            let root = pathHelper.ensureAbsoluteRoot('C:\\dummy-root', '\\');
+            if (!root.endsWith('\\')) {
+                root += '\\';
+            }
+            pattern = Pattern.globEscape(root) + pattern.substr(1);
+        }
+        // Otherwise ensure absolute root
+        else {
+            pattern = pathHelper.ensureAbsoluteRoot(Pattern.globEscape(process.cwd()), pattern);
+        }
+        return pathHelper.normalizeSeparators(pattern);
+    }
+    /**
+     * Attempts to unescape a pattern segment to create a literal path segment.
+     * Otherwise returns empty string.
+     */
+    static getLiteral(segment) {
+        let literal = '';
+        for (let i = 0; i < segment.length; i++) {
+            const c = segment[i];
+            // Escape
+            if (c === '\\' && !IS_WINDOWS && i + 1 < segment.length) {
+                literal += segment[++i];
+                continue;
+            }
+            // Wildcard
+            else if (c === '*' || c === '?') {
+                return '';
+            }
+            // Character set
+            else if (c === '[' && i + 1 < segment.length) {
+                let set = '';
+                let closed = -1;
+                for (let i2 = i + 1; i2 < segment.length; i2++) {
+                    const c2 = segment[i2];
+                    // Escape
+                    if (c2 === '\\' && !IS_WINDOWS && i2 + 1 < segment.length) {
+                        set += segment[++i2];
+                        continue;
+                    }
+                    // Closed
+                    else if (c2 === ']') {
+                        closed = i2;
+                        break;
+                    }
+                    // Otherwise
+                    else {
+                        set += c2;
+                    }
+                }
+                // Closed?
+                if (closed >= 0) {
+                    // Cannot convert
+                    if (set.length > 1) {
+                        return '';
+                    }
+                    // Convert to literal
+                    if (set) {
+                        literal += set;
+                        i = closed;
+                        continue;
+                    }
+                }
+                // Otherwise fall thru
+            }
+            // Append
+            literal += c;
+        }
+        return literal;
+    }
+    /**
+     * Escapes regexp special characters
+     * https://javascript.info/regexp-escaping
+     */
+    static regExpEscape(s) {
+        return s.replace(/[[\\^$.|?*+()]/g, '\\$&');
+    }
+}
+exports.Pattern = Pattern;
+//# sourceMappingURL=internal-pattern.js.map
+
+/***/ }),
+
+/***/ 945:
+/***/ (function(module, __unusedexports, __nested_webpack_require_344410__) {
+
+"use strict";
+
+
+var YAMLException = __nested_webpack_require_344410__(556);
 
 var TYPE_CONSTRUCTOR_OPTIONS = [
   'kind',
@@ -11289,12 +11719,12 @@ module.exports = Type;
 /***/ }),
 
 /***/ 947:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_346088__) {
 
 "use strict";
 
 
-var Type = __webpack_require__(945);
+var Type = __nested_webpack_require_346088__(945);
 
 var _toString = Object.prototype.toString;
 
@@ -11350,12 +11780,12 @@ module.exports = new Type('tag:yaml.org,2002:pairs', {
 /***/ }),
 
 /***/ 950:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_347268__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const url = __webpack_require__(835);
+const url = __nested_webpack_require_347268__(835);
 function getProxyUrl(reqUrl) {
     let usingSsl = reqUrl.protocol === 'https:';
     let proxyUrl;
@@ -11416,13 +11846,13 @@ exports.checkBypass = checkBypass;
 /***/ }),
 
 /***/ 972:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_349001__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const assert = __webpack_require__(357);
-const path = __webpack_require__(622);
+const assert = __nested_webpack_require_349001__(357);
+const path = __nested_webpack_require_349001__(622);
 const IS_WINDOWS = process.platform === 'win32';
 /**
  * Similar to path.dirname except normalizes the path separators and slightly better handling for Windows UNC paths.
@@ -11598,7 +12028,7 @@ exports.safeTrimTrailingSeparator = safeTrimTrailingSeparator;
 /***/ }),
 
 /***/ 979:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_355311__) {
 
 "use strict";
 
@@ -11619,7 +12049,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const core = __importStar(__webpack_require__(470));
+const core = __importStar(__nested_webpack_require_355311__(470));
 /**
  * Internal class for retries
  */
@@ -11675,7 +12105,7 @@ exports.RetryHelper = RetryHelper;
 /***/ }),
 
 /***/ 986:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __nested_webpack_require_358238__) {
 
 "use strict";
 
@@ -11696,7 +12126,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const tr = __importStar(__webpack_require__(686));
+const tr = __importStar(__nested_webpack_require_358238__(686));
 /**
  * Exec a command.
  * Output will be streamed to the live console.
@@ -11726,18 +12156,230 @@ exports.exec = exec;
 /***/ }),
 
 /***/ 988:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __nested_webpack_require_360460__) {
 
 "use strict";
 
 
-var Type = __webpack_require__(945);
+var Type = __nested_webpack_require_360460__(945);
 
 module.exports = new Type('tag:yaml.org,2002:map', {
   kind: 'mapping',
   construct: function (data) { return data !== null ? data : {}; }
 });
 
+
+/***/ })
+
+/******/ });
+
+/***/ }),
+
+/***/ 605:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(605);
+
+/***/ }),
+
+/***/ 614:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(614);
+
+/***/ }),
+
+/***/ 622:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(622);
+
+/***/ }),
+
+/***/ 631:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(631);
+
+/***/ }),
+
+/***/ 669:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(669);
+
+/***/ }),
+
+/***/ 747:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(747);
+
+/***/ }),
+
+/***/ 835:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(835);
+
+/***/ })
+
+/******/ });
+
+/***/ }),
+
+/***/ 605:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(605);
+
+/***/ }),
+
+/***/ 614:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(614);
+
+/***/ }),
+
+/***/ 622:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(622);
+
+/***/ }),
+
+/***/ 631:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(631);
+
+/***/ }),
+
+/***/ 669:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(669);
+
+/***/ }),
+
+/***/ 747:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(747);
+
+/***/ }),
+
+/***/ 835:
+/***/ (function(module) {
+
+module.exports = __nested_webpack_require_2184__(835);
+
+/***/ })
+
+/******/ });
+
+/***/ }),
+
+/***/ 605:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(605);
+
+/***/ }),
+
+/***/ 614:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(614);
+
+/***/ }),
+
+/***/ 622:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(622);
+
+/***/ }),
+
+/***/ 631:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(631);
+
+/***/ }),
+
+/***/ 669:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(669);
+
+/***/ }),
+
+/***/ 747:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(747);
+
+/***/ }),
+
+/***/ 835:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(835);
+
+/***/ })
+
+/******/ });
+
+/***/ }),
+
+/***/ 605:
+/***/ (function(module) {
+
+module.exports = require("http");
+
+/***/ }),
+
+/***/ 614:
+/***/ (function(module) {
+
+module.exports = require("events");
+
+/***/ }),
+
+/***/ 622:
+/***/ (function(module) {
+
+module.exports = require("path");
+
+/***/ }),
+
+/***/ 631:
+/***/ (function(module) {
+
+module.exports = require("net");
+
+/***/ }),
+
+/***/ 669:
+/***/ (function(module) {
+
+module.exports = require("util");
+
+/***/ }),
+
+/***/ 747:
+/***/ (function(module) {
+
+module.exports = require("fs");
+
+/***/ }),
+
+/***/ 835:
+/***/ (function(module) {
+
+module.exports = require("url");
 
 /***/ })
 
