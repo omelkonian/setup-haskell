@@ -2,7 +2,8 @@
   "name": "setup-haskell",
   "version": "0.1.0",
   "description": "setup haskell action",
-  "main": "src/main.ts",
+  "main": "dist/main",
+  "types": "dist/main",
   "scripts": {
     "test": "jest"
   },
