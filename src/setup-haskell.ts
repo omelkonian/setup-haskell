@@ -15,10 +15,13 @@ async function cabalConfig(): Promise<string> {
   return out.toString().trim().split('\n').slice(-1)[0].trim();
 }
 
-(async () => {
+export default async function run(
+  inputs: Record<string, string>
+): Promise<void> {
   try {
     core.info('Preparing to setup a Haskell environment');
-    const opts = getOpts(getDefaults());
+
+    const opts = getOpts(getDefaults(), inputs);
 
     for (const [t, {resolved}] of Object.entries(opts).filter(o => o[1].enable))
       await core.group(`Installing ${t} version ${resolved}`, async () =>
@@ -48,4 +51,4 @@ async function cabalConfig(): Promise<string> {
   } catch (error) {
     core.setFailed(error.message);
   }
-})();
+}

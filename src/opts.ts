@@ -22,13 +22,13 @@ export interface Options {
 type Version = {version: string; supported: string[]};
 export type Defaults = Record<Tool, Version>;
 
-export function getDefaults(): Defaults {
-  const inpts = safeLoad(
-    readFileSync(join(__dirname, '..', 'action.yml'), 'utf8')
-  ).inputs;
+export const yamlInputs: Record<string, {default: string}> = safeLoad(
+  readFileSync(join(__dirname, '..', 'action.yml'), 'utf8')
+).inputs;
 
+export function getDefaults(): Defaults {
   const mkVersion = (v: string, vs: string[]): Version => ({
-    version: resolve(inpts[v].default, vs),
+    version: resolve(yamlInputs[v].default, vs),
     supported: vs
   });
 
@@ -45,14 +45,17 @@ function resolve(version: string, supported: string[]): string {
     : supported.find(v => v.startsWith(version)) ?? version;
 }
 
-export function getOpts({ghc, cabal, stack}: Defaults): Options {
-  const stackNoGlobal = core.getInput('stack-no-global') !== '';
-  const stackSetupGhc = core.getInput('stack-setup-ghc') !== '';
-  const stackEnable = core.getInput('enable-stack') !== '';
+export function getOpts(
+  {ghc, cabal, stack}: Defaults,
+  inputs: Record<string, string>
+): Options {
+  const stackNoGlobal = inputs['stack-no-global'] === 'true';
+  const stackSetupGhc = inputs['stack-setup-ghc'] === 'true';
+  const stackEnable = inputs['enable-stack'] === 'true';
   const verInpt = {
-    ghc: core.getInput('ghc-version') || ghc.version,
-    cabal: core.getInput('cabal-version') || cabal.version,
-    stack: core.getInput('stack-version') || stack.version
+    ghc: inputs['ghc-version'] || ghc.version,
+    cabal: inputs['cabal-version'] || cabal.version,
+    stack: inputs['stack-version'] || stack.version
   };
 
   const errors = [];
@@ -83,7 +86,7 @@ export function getOpts({ghc, cabal, stack}: Defaults): Options {
       raw: verInpt.stack,
       resolved: resolve(verInpt.stack, stack.supported),
       enable: stackEnable,
-      setup: core.getInput('stack-setup-ghc') !== ''
+      setup: inputs['stack-setup-ghc'] !== ''
     }
   };
 
